@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import Fulnav from "./components/nav/Fulnav";
 import Loading from "./components/loading/LoadingFull";
+import Modal from "./components/modal/Modal";
 
 const Login = React.lazy(() => import("./pages/Login"));
 const Register = React.lazy(() => import("./pages/Register"));
@@ -13,6 +14,7 @@ export default function App() {
   console.log(token);
   return (
     <>
+      <Modal />
       <Fulnav />
       <main>
         <Suspense fallback={<Loading />}>

@@ -11,156 +11,11 @@ export default function Fulnav() {
         <nav className="bg-white shadow xl:block hidden">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
-              {/* for nav center */}
-              <div className="inset-y-0 left-0 flex items-center xl:hidden">
-                <div className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-100 focus:outline-none transition duration-150 ease-in-out">
-                  <div className="visible xl:hidden">
-                    <ul className="p-2 border-r bg-white absolute rounded left-0 right-0 shadow mt-8 md:mt-8 hidden">
-                      <li className="flex xl:hidden cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div className="flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon icon-tabler icon-tabler-grid"
-                            width={20}
-                            height={20}
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <rect x={4} y={4} width={6} height={6} rx={1} />
-                            <rect x={14} y={4} width={6} height={6} rx={1} />
-                            <rect x={4} y={14} width={6} height={6} rx={1} />
-                            <rect x={14} y={14} width={6} height={6} rx={1} />
-                          </svg>
-                          <span className="ml-2 font-bold">Perjalanan</span>
-                        </div>
-                      </li>
-                      <li className="flex xl:hidden flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center">
-                        <div className="flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon icon-tabler icon-tabler-puzzle"
-                            width={20}
-                            height={20}
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
-                          </svg>
-                          <span className="ml-2 font-bold">Guided</span>
-                        </div>
-                      </li>
-
-                      <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
-                        <div className="flex items-center">
-                          <div className="w-12 cursor-pointer flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                            <img
-                              className="rounded h-10 w-10 object-cover"
-                              src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_1.png"
-                              alt="logo"
-                            />
-                          </div>
-                          <p className="text-sm ml-2 cursor-pointer">
-                            Jane Doe
-                          </p>
-                          <div className="sm:ml-2 text-white relative">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
-                              width={20}
-                              height={20}
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="currentColor"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div className="flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon icon-tabler icon-tabler-user"
-                            width={20}
-                            height={20}
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <circle cx={12} cy={7} r={4} />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                          </svg>
-                          <span className="ml-2">Profile</span>
-                        </div>
-                      </li>
-                    </ul>
-                    <svg
-                      onclick="MenuHandler(this,true)"
-                      aria-haspopup="true"
-                      aria-label="Main Menu"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="show-m-menu icon icon-tabler icon-tabler-menu"
-                      width={28}
-                      height={28}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <line x1={4} y1={8} x2={20} y2={8} />
-                      <line x1={4} y1={16} x2={20} y2={16} />
-                    </svg>
-                  </div>
-                  <div
-                    className="hidden close-m-menu text-gray-700"
-                    onclick="MenuHandler(this,false)"
-                  >
-                    <svg
-                      aria-label="Close"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <line x1={18} y1={6} x2={6} y2={18} />
-                      <line x1={6} y1={6} x2={18} y2={18} />
-                    </svg>
-                  </div>
-                </div>
-              </div>
               {/* for branc nav*/}
               <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                 <div className="flex items-center w-24">
                   <img src={logo} alt="logo" className="h-8 mr-1" />
-                  Jokkaki
+                  <p className="text-lg tracking-wide font-medium">Jokkaki</p>
                 </div>
               </div>
               <div className="flex">
@@ -251,7 +106,7 @@ export default function Fulnav() {
                       onClick={() => setProfile(!profile)}
                     >
                       {profile && (
-                        <ul className="p-2 w-40 border-r bg-white absolute rounded right-0 shadow top-0 mt-16 ">
+                        <ul className="p-2 w-40 border-r bg-gray-50 absolute rounded right-0 shadow-lg top-0 mt-16 ">
                           <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                             <div className="flex items-center">
                               <svg
@@ -359,7 +214,7 @@ export default function Fulnav() {
               </div>
               <div className="flex items-center w-24">
                 <img src={logo} alt="logo" className="h-6 mr-1" />
-                Jokkaki
+                <p className="text-lg tracking-wide font-medium">Jokkaki</p>
               </div>
             </div>
 
@@ -413,7 +268,9 @@ export default function Fulnav() {
                       <div className="flex items-center justify-between w-full">
                         <div className="flex items-center w-24">
                           <img src={logo} alt="logo" className="h-6 mr-1" />
-                          Jokkaki
+                          <p className="text-lg tracking-wide font-medium">
+                            Jokkaki
+                          </p>
                         </div>
                         <div
                           id="cross"
@@ -442,9 +299,9 @@ export default function Fulnav() {
 
                     <ul className="f-m-m">
                       <a className="cursor-pointer">
-                        <li className="text-gray-800 pt-10">
+                        <li className="text-gray-800 pt-10 hover:text-indigo-700">
                           <div className="flex items-center">
-                            <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
+                            <div className="w-6 h-6 md:w-8 md:h-8 ">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="icon icon-tabler icon-tabler-grid"
@@ -480,17 +337,17 @@ export default function Fulnav() {
                                 />
                               </svg>
                             </div>
-                            <p className="text-indigo-700 xl:text-base text-base ml-3">
+                            <p className=" xl:text-base text-base ml-3">
                               Perjalanan
                             </p>
                           </div>
                         </li>
                       </a>
                       <a className="cursor-pointer">
-                        <li className="text-gray-800 pt-8">
+                        <li className="text-gray-800 pt-8 hover:text-indigo-700">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                              <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
+                              <div className="w-6 h-6 md:w-8 md:h-8 ">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="icon icon-tabler icon-tabler-puzzle"
@@ -505,7 +362,7 @@ export default function Fulnav() {
                                   <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
                                 </svg>
                               </div>
-                              <p className="text-indigo-700 xl:text-base text-base ml-3">
+                              <p className=" xl:text-base text-base ml-3">
                                 guided
                               </p>
                             </div>
@@ -513,13 +370,13 @@ export default function Fulnav() {
                         </li>
                       </a>
                       <a className="cursor-pointer">
-                        <li className="text-gray-800 pt-8">
+                        <li className="text-gray-800 pt-8 hover:text-indigo-700">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                              <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
+                              <div className="w-6 h-6 md:w-8 md:h-8 ">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
-                                  className="icon icon-tabler icon-tabler-puzzle"
+                                  className="icon icon-tabler icon-tabler-user"
                                   viewBox="0 0 24 24"
                                   strokeWidth="1.5"
                                   stroke="currentColor"
@@ -528,10 +385,11 @@ export default function Fulnav() {
                                   strokeLinejoin="round"
                                 >
                                   <path stroke="none" d="M0 0h24v24H0z" />
-                                  <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
+                                  <circle cx={12} cy={7} r={4} />
+                                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                 </svg>
                               </div>
-                              <p className="text-indigo-700 xl:text-base text-base ml-3">
+                              <p className="xl:text-base text-base ml-3">
                                 akun ku
                               </p>
                             </div>
@@ -539,13 +397,13 @@ export default function Fulnav() {
                         </li>
                       </a>
                       <a className="cursor-pointer">
-                        <li className="text-gray-800 pt-8">
+                        <li className="text-gray-800 hover:text-indigo-700 pt-8">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                              <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
+                              <div className="w-6 h-6 md:w-8 md:h-8 ">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
-                                  className="icon icon-tabler icon-tabler-puzzle"
+                                  className="icon icon-tabler icon-tabler-help"
                                   viewBox="0 0 24 24"
                                   strokeWidth="1.5"
                                   stroke="currentColor"
@@ -554,10 +412,12 @@ export default function Fulnav() {
                                   strokeLinejoin="round"
                                 >
                                   <path stroke="none" d="M0 0h24v24H0z" />
-                                  <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
+                                  <circle cx={12} cy={12} r={9} />
+                                  <line x1={12} y1={17} x2={12} y2="17.01" />
+                                  <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
                                 </svg>
                               </div>
-                              <p className="text-indigo-700 xl:text-base text-base ml-3">
+                              <p className="xl:text-base text-base ml-3">
                                 bantuan
                               </p>
                             </div>

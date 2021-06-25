@@ -16,6 +16,6 @@ const uiSlice = createSlice({
     },
   },
 });
-export const { showNotif, hideNotif } = uiSlice.action;
+export const { showNotif, hideNotif } = uiSlice.actions;
 
 export default uiSlice.reducer;

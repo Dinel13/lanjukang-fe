@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import Fulnav from "./components/nav/Fulnav";
 
 export default function App() {
-  // const token = useSelector((state) => state.auth.token);
+  const token = useSelector((state) => state.auth.token);
+  console.log(token);
   return (
     <>
       <Fulnav />

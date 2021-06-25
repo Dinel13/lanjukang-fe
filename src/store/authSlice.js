@@ -22,7 +22,7 @@ const authSlice = createSlice({
       );
       state.token = token;
       state.name = name;
-      state.name = userId;
+      state.userId = userId;
     },
     logout(state) {
       localStorage.removeItem("pj_a");

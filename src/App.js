@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Route, Switch, Redirect } from "react-router-dom";
+
+import { login } from "./store/authSlice";
 
 import Fulnav from "./components/nav/Fulnav";
 import Loading from "./components/loading/LoadingFull";
@@ -8,10 +10,16 @@ import Modal from "./components/modal/Modal";
 
 const Login = React.lazy(() => import("./pages/Login"));
 const Register = React.lazy(() => import("./pages/Register"));
+const MyAccount = React.lazy(() => import("./pages/MyAccount"));
 
 export default function App() {
+  const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
-  console.log(token);
+
+  React.useEffect(() => {
+    localStorage.getItem("authUnhas") &&
+      dispatch(login(JSON.parse(localStorage.getItem("pj_a"))));
+  });
   return (
     <>
       <Modal />
@@ -27,6 +35,9 @@ export default function App() {
             </Route>
             <Route path="/daftar" exact>
               <Register />
+            </Route>
+            <Route path="/akunku" exact>
+              <MyAccount />
             </Route>
             <Route path="/perjalanan" exact>
               <h1>header</h1>

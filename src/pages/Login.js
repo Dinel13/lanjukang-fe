@@ -14,7 +14,7 @@ export default function Login() {
 
   const onSuccessLogin = () => {
     setPending(false);
-    setTimeout(() => history.push("/"), 2000);
+    setTimeout(() => history.push("/"), 1000);
   };
 
   const onFailLogin = () => setPending(false);

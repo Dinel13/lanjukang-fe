@@ -16,7 +16,7 @@ export default function Login() {
 
   const onSuccesSingup = () => {
     setPending(false);
-    setTimeout(() => history.push("/"), 2000);
+    setTimeout(() => history.push("/"), 1000);
   };
 
   const onFailSignup = () => setPending(false);

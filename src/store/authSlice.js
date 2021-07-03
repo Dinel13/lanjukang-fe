@@ -15,9 +15,7 @@ const authSlice = createSlice({
       localStorage.setItem(
         "pj_a",
         JSON.stringify({
-          token,
-          name,
-          userId,
+          token: `${token}9gTe1Sk${userId}KS1gtek6${name}`,
         })
       );
       state.token = token;
@@ -27,8 +25,6 @@ const authSlice = createSlice({
     logout(state) {
       localStorage.removeItem("pj_a");
       state.token = null;
-      state.userId = null;
-      state.name = null;
     },
   },
 });

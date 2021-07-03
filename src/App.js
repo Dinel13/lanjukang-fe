@@ -17,34 +17,63 @@ export default function App() {
   const token = useSelector((state) => state.auth.token);
 
   React.useEffect(() => {
-    localStorage.getItem("authUnhas") &&
-      dispatch(login(JSON.parse(localStorage.getItem("pj_a"))));
+    if (localStorage.getItem("pj_a")) {
+      const data = JSON.parse(localStorage.getItem("pj_a"));
+      const _token = data.token.split("9gTe1Sk")[0];
+      const userId = data.token.split("9gTe1Sk")[1].split("KS1gtek6")[0];
+      const name = data.token.split("9gTe1Sk")[1].split("KS1gtek6")[1];
+      dispatch(login({ token: _token, userId, name }));
+    }
   });
+  let route;
+
+  if (token) {
+    route = (
+      <Switch>
+        <Route path="/" exact>
+          gdfgfdg
+        </Route>
+        <Route path="/masuk" exact>
+          <Login />
+        </Route>
+        <Route path="/daftar" exact>
+          <Register />
+        </Route>
+        <Route path="/akunku" exact>
+          <MyAccount />
+        </Route>
+        <Route path="/perjalanan" exact>
+          <h1>header</h1>
+        </Route>
+      </Switch>
+    );
+  } else {
+    <Switch>
+      <Route path="/" exact>
+        gdfgfdg
+      </Route>
+      <Route path="/masuk" exact>
+        <Login />
+      </Route>
+      <Route path="/daftar" exact>
+        <Register />
+      </Route>
+      <Route path="/akunku" exact>
+        <MyAccount />
+      </Route>
+      <Route path="/perjalanan" exact>
+        <h1>header</h1>
+      </Route>
+    </Switch>;
+  }
+
   return (
-    <>
+    <div className="font-montserrat">
       <Modal />
       <Fulnav />
       <main>
-        <Suspense fallback={<Loading />}>
-          <Switch>
-            <Route path="/" exact>
-              gdfgfdg
-            </Route>
-            <Route path="/masuk" exact>
-              <Login />
-            </Route>
-            <Route path="/daftar" exact>
-              <Register />
-            </Route>
-            <Route path="/akunku" exact>
-              <MyAccount />
-            </Route>
-            <Route path="/perjalanan" exact>
-              <h1>header</h1>
-            </Route>
-          </Switch>
-        </Suspense>
+        <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>
-    </>
+    </div>
   );
 }

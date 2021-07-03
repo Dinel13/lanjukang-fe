@@ -6,6 +6,7 @@ module.exports = {
       //tidak menimpa font defult sans serif none
       fontFamily: {
         montserrat: ["montserrat", "sans-serif"],
+        signika: ["signika", "sans-serif"],
       },
     },
   },

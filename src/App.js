@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -7,10 +7,12 @@ import { login } from "./store/authSlice";
 import Fulnav from "./components/nav/Fulnav";
 import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
+import About from "./components/about/About";
 
-const Login = React.lazy(() => import("./pages/Login"));
-const Register = React.lazy(() => import("./pages/Register"));
-const MyAccount = React.lazy(() => import("./pages/MyAccount"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const MyAccount = lazy(() => import("./pages/MyAccount"));
+const Trip = lazy(() => import("./pages/Trip"));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact>
           gdfgfdg
+          <About />
         </Route>
         <Route path="/masuk" exact>
           <Login />
@@ -43,7 +46,7 @@ export default function App() {
           <MyAccount />
         </Route>
         <Route path="/perjalanan" exact>
-          <h1>header</h1>
+          <Trip />
         </Route>
       </Switch>
     );
@@ -62,7 +65,7 @@ export default function App() {
         <MyAccount />
       </Route>
       <Route path="/perjalanan" exact>
-        <h1>header</h1>
+        <Trip />
       </Route>
     </Switch>;
   }

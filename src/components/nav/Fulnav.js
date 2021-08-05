@@ -14,24 +14,24 @@ export default function Fulnav() {
   const [profile, setProfile] = useState(false);
   return (
     <>
-      <div className="bg-gray-200 h-full w-full">
+      <div className="bg-transparent h-full w-full text-white font-semibold">
         {/* BIG SCREEN NAV */}
-        <nav className="bg-white shadow xl:block hidden mb-6">
+        <nav className=" shadow xl:block hidden mb-6">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
               <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                 <Link to="/" className="flex items-center w-24">
                   <img src={logo} alt="logo" className="h-8 mr-1" />
-                  <p className="text-lg tracking-wide font-medium">Jokkaki</p>
+                  <p className="text-lg tracking-wide font-bold">Jokkaki</p>
                 </Link>
               </div>
               <div className="flex items-center">
                 <Nav />
-                <div className="hidden xl:flex items-center">
+                {/* <div className="hidden xl:flex items-center">
                   <div className="relative md:mr-6 my-2">
                     <div className="flex items-center justify-center w-full">
-                      <div className="text-gray-500 absolute ml-4 inset-0 m-auto w-4 h-4">
+                      <div className=" absolute ml-4 inset-0 m-auto w-4 h-4">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="icon icon-tabler icon-tabler-search"
@@ -56,8 +56,14 @@ export default function Fulnav() {
                       />
                     </div>
                   </div>
-                </div>
-                {token ? (
+                </div> */}
+                <Link
+                  to="/become-partner"
+                  className="flex px-5 items-center py-6 text-sm leading-5 hover:text-gray-200  focus:outline-none transition duration-150 ease-in-out"
+                >
+                  Tawarkan jasa kamu
+                </Link>
+                {!token ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (
                   <Auth />

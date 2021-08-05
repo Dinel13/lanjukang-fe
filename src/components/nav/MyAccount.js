@@ -54,20 +54,14 @@ export default function MyAccount({ profile, setProfile }) {
             </li>
           </ul>
         )}
-        <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
-          <img
-            className="rounded-full h-10 w-10 object-cover"
-            src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png"
-            alt="logo"
-          />
-        </div>
-        <div className="ml-2 text-gray-600">
+        <div className="cursor-pointer flex items-center text-sm border-2 border-transparent rounded-3xl bg-white focus:outline-none focus:border-white transition duration-150 ease-in-out">
+        <div className="mx-2 text-gray-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
             width={20}
             height={20}
-            viewBox="0 0 24 24"
+            viewBox="0 0 20 20"
             strokeWidth="1.5"
             stroke="currentColor"
             fill="none"
@@ -78,6 +72,13 @@ export default function MyAccount({ profile, setProfile }) {
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
+          <img
+            className="rounded-full my-1 mx-2  h-8 w-8 object-cover"
+            src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png"
+            alt="logo"
+          />
+        </div>
+       
       </div>
     </div>
   );

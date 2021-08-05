@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 
+import './app.css'
 import { login } from "./store/authSlice";
 
 import Fulnav from "./components/nav/Fulnav";
@@ -33,10 +34,10 @@ export default function App() {
     route = (
       <Switch>
         <Route path="/" exact>
-          gdfgfdg
           <About />
         </Route>
         <Route path="/masuk" exact>
+          fdsds
           <Login />
         </Route>
         <Route path="/daftar" exact>
@@ -53,10 +54,11 @@ export default function App() {
   } else {
     <Switch>
       <Route path="/" exact>
-        gdfgfdg
+        <About />
       </Route>
       <Route path="/masuk" exact>
         <Login />
+        dasd
       </Route>
       <Route path="/daftar" exact>
         <Register />
@@ -73,7 +75,10 @@ export default function App() {
   return (
     <div className="font-montserrat">
       <Modal />
+      <div className="head-bg-image ">
       <Fulnav />
+      <div className="h-96"></div>
+      </div>
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>

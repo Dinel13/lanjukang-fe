@@ -73,7 +73,7 @@ export default function MyAccount({ profile, setProfile }) {
           </svg>
         </div>
           <img
-            className="rounded-full my-1 mx-2  h-8 w-8 object-cover"
+            className="rounded-full my-0 mx-2  h-8 w-8 object-cover"
             src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png"
             alt="logo"
           />

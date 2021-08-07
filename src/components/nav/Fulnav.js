@@ -65,7 +65,7 @@ export default function Fulnav() {
                 >
                   Tawarkan jasa kamu
                 </Link>
-                {token ? (
+                {!token ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (
                   <Auth />

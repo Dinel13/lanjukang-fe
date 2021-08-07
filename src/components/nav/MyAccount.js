@@ -8,7 +8,7 @@ export default function MyAccount({ profile, setProfile }) {
         onClick={() => setProfile(!profile)}
       >
         {profile && (
-          <ul className="p-2 w-40 border-r bg-gray-50 absolute rounded right-0 shadow-lg top-0 mt-16 ">
+          <ul className="p-2 w-48 bg-gray-50 absolute rounded-lg right-0 shadow-lg top-0 mt-14 ">
             <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
               <Link to="/akunku" className="flex items-center">
                 <svg
@@ -54,31 +54,27 @@ export default function MyAccount({ profile, setProfile }) {
             </li>
           </ul>
         )}
-        <div className="cursor-pointer flex items-center text-sm border-2 border-transparent rounded-3xl bg-white focus:outline-none focus:border-white transition duration-150 ease-in-out">
-        <div className="mx-2 text-gray-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
-            width={20}
-            height={20}
-            viewBox="0 0 20 20"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" />
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </div>
+        <div className="py-1 cursor-pointer flex items-center text-sm border-2 border-transparent rounded-3xl bg-white focus:outline-none focus:border-white transition duration-150 ease-in-out">
+          <div className="mx-2 text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
           <img
-            className="rounded-full my-0 mx-2  h-8 w-8 object-cover"
+            className="rounded-full my-0 mr-2  h-8 w-8 object-cover"
             src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png"
             alt="logo"
           />
         </div>
-       
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function SideNav({ show, setShow, token }) {
     <div
       className={
         show
-          ? "w-full xl:hidden h-full  absolute z-40  transform  translate-x-0 bottom-0 left-0 "
+          ? "w-full xl:hidden h-full  fixed z-40  transform  translate-x-0 bottom-0 left-0 "
           : "   w-full xl:hidden h-full absolute z-40  transform -translate-x-full "
       }
     >
@@ -17,7 +17,7 @@ export default function SideNav({ show, setShow, token }) {
         className="bg-gray-800 opacity-50 w-full h-full"
         onClick={() => setShow(!show)}
       />
-      <div className="w-64 z-40 fixed overflow-y-auto top-0 bg-gray-100 shadow h-full flex-col justify-between xl:hidden pb-4 transition duration-150 ease-in-out">
+      <div className="w-64 z-40 fixed overflow-y-auto top-0 text-gray-800 bg-gray-50 shadow h-full flex-col justify-between xl:hidden pb-4 transition duration-150 ease-in-out">
         <div className="px-6 h-full">
           <div className="flex flex-col justify-between h-full w-full">
             <div>
@@ -178,7 +178,7 @@ export default function SideNav({ show, setShow, token }) {
             </div>
             <div className="w-full pt-4">
               <hr className="-mx-4 border-gray-300 border mb-4 " />
-              {token ? (
+              {!token ? (
                 <div className="w-full flex items-center justify-between">
                   <div className="flex items-center">
                     <img
@@ -187,7 +187,7 @@ export default function SideNav({ show, setShow, token }) {
                       className="w-8 h-8 rounded-md"
                     />
                     <p className=" text-gray-800 text-base leading-4 ml-2">
-                      Jane Doe
+                      Ainun
                     </p>
                   </div>
                   <ul className="flex">

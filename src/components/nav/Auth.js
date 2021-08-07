@@ -6,7 +6,7 @@ export default function Auth() {
     <div className="flex items-end">
       <Link
         to="/daftar"
-        className="inline-flex items-center text-sm mr-1.5  p-2  btn-pri "
+        className="inline-flex items-center text-sm mr-1.5  p-2 font-bold text-yellow-200 hover:text-yellow-100 "
       >
         Daftar
         <svg
@@ -23,7 +23,7 @@ export default function Auth() {
       </Link>
       <Link
         to="/masuk"
-        className="inline-flex items-center text-sm p-2 btn-sec"
+        className="inline-flex items-center rounded-xl leading-tight text-sm p-2 btn-sec"
       >
         Masuk
         <svg

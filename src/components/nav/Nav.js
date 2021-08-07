@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <div className="hidden xl:flex md:mr-6 xl:mr-16">
+    <div className=" hidden xl:flex">
       <Link
         to="/perjalanan"
         className="flex px-5 items-center py-6 text-sm leading-5  hover:text-gray-200   focus:outline-none transition duration-150 ease-in-out"

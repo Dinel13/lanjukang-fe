@@ -2,13 +2,13 @@ import React, { Suspense, lazy } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import './app.css'
 import { login } from "./store/authSlice";
 
 import Fulnav from "./components/nav/Fulnav";
 import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
 import About from "./components/about/About";
+import Hero from "./components/hero/Hero";
 
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
@@ -75,10 +75,8 @@ export default function App() {
   return (
     <div className="font-montserrat">
       <Modal />
-      <div className="head-bg-image ">
       <Fulnav />
-      <div className="h-96"></div>
-      </div>
+      <Hero />      
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>

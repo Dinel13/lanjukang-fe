@@ -16,7 +16,7 @@ export default function Fulnav() {
     <>
       <div className="bg-transparent h-full w-full text-white font-semibold">
         {/* BIG SCREEN NAV */}
-        <nav className=" shadow xl:block hidden mb-6">
+        <nav className="fixed left-0 top-0 w-full xl:block hidden mb-6">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
@@ -57,13 +57,15 @@ export default function Fulnav() {
                     </div>
                   </div>
                 </div> */}
+              </div>
+              <div className="flex items-center">
                 <Link
                   to="/become-partner"
                   className="flex px-5 items-center py-6 text-sm leading-5 hover:text-gray-200  focus:outline-none transition duration-150 ease-in-out"
                 >
                   Tawarkan jasa kamu
                 </Link>
-                {!token ? (
+                {token ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (
                   <Auth />
@@ -75,7 +77,7 @@ export default function Fulnav() {
 
         {/* SMALL SCREEN NAV */}
         <nav className="bg-white block xl:hidden mb-20">
-          <div className="py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 shadow">
+          <div className="py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40">
             <div className="flex items-center">
               <div
                 id="menu"

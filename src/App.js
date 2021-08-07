@@ -9,6 +9,7 @@ import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
 import About from "./components/about/About";
 import Hero from "./components/hero/Hero";
+import Popular from "./components/popular-dest/Popular-destination";
 
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
@@ -76,7 +77,8 @@ export default function App() {
     <div className="font-montserrat">
       <Modal />
       <Fulnav />
-      <Hero />      
+      <Hero /> 
+      <Popular />     
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>

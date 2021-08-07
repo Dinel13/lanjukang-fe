@@ -94,7 +94,7 @@ export default function Fulnav() {
         {/* SMALL SCREEN NAV */}
         <nav className="bg-white block lg:hidden mb-20">
           <div
-            className={`py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
+            className={`pixed py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
               offset < 10.58
                 ? "bg-transparent"
                 : "bg-gray-50 text-gray-800 shadow-lg"

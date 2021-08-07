@@ -1,8 +1,8 @@
 import React from "react";
 
-import partner1 from "../../assets/partner-1.png";
-import partner2 from "../../assets/partner-2.png";
-import partner3 from "../../assets/partner-3.png";
+import partner1 from "../../assets/partner-1.jpg";
+import partner2 from "../../assets/partner-2.jpg";
+import partner3 from "../../assets/partner-3.jpg";
 export default function BecomePartner() {
   return (
     <div className="container px-8 py-10 sm:pt-14 lg:pt-16  mx-auto">

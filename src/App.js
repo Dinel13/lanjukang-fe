@@ -10,6 +10,8 @@ import Modal from "./components/modal/Modal";
 import About from "./components/about/About";
 import Hero from "./components/hero/Hero";
 import Popular from "./components/popular-dest/Popular-destination";
+import BecomePartner from "./components/be-our-partner/BecomePartner";
+import Footer from "./components/footer/Footer";
 
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
@@ -78,7 +80,9 @@ export default function App() {
       <Modal />
       <Fulnav />
       <Hero /> 
-      <Popular />     
+      <Popular />   
+      <BecomePartner />  
+      <Footer />
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>

@@ -11,38 +11,38 @@ export default function BecomePartner() {
       </h2>
       <div className="my-8">
         <div className="flex items-center">
-          <img src={partner1} className="rounded-xl " alt="partner" />
+          <img src={partner1} className="rounded-xl w-1/5 md:w-1/4 " alt="partner" />
           <div className="pl-4 max-w-lg">
-            <p className="text-xl font-semibold">
+            <p className="text-md md:text-lg lg:text-lg font-semibold">
               Allows new opportunities for overseas sales
             </p>
-            <p>
+            <p className="text-sm lg:text-base xl:text-lg">
               Travelers comes from around the world. Becoming our partner will
               expand your business without too much marketing costs
             </p>
           </div>
         </div>
-        <div className="flex items-center ml-14 md:ml-20 lg:ml-24 -mt-8">
-          <img src={partner2} className="rounded-xl " alt="partner" />
+        <div className="flex items-center ml-10 sm:ml-16 md:ml-20 lg:ml-24 mt-4 md:-mt-8">
+          <img src={partner2} className="rounded-xl w-1/5 md:w-1/4" alt="partner" />
           <div className="pl-4 max-w-lg">
-            <p className="text-xl font-semibold">
+            <p className="text-md md:text-lg lg:text-lg font-semibold">
               Established marketplace that provides a level of trust between you
               and the buyer
             </p>
-            <p>
+            <p className="text-sm lg:text-base xl:text-lg">
               Provide greater transparency - availability, prices and stock
               levels are accessible in an open environment
             </p>
           </div>
         </div>
-        <div className="flex items-center -mt-8">
-          <img src={partner3} className="rounded-xl " alt="partner" />
+        <div className="flex items-center mt-4 md:-mt-8">
+          <img src={partner3} className="rounded-xl w-1/5 md:w-1/4" alt="partner" />
           <div className="pl-4 max-w-lg">
-            <p className="text-xl font-semibold">
+            <p className="text-md md:text-lg lg:text-lg font-semibold">
               Reviews of your products and service may give new customers the
               confidence to buy
             </p>
-            <p>
+            <p className="text-sm lg:text-base xl:text-lg">
               Also opular with customers and offer a convenient way to compare
               prices and products from a single source
             </p>

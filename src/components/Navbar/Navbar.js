@@ -82,7 +82,7 @@ export default function Navbar() {
                 >
                   Tawarkan jasa kamu
                 </Link>
-                {!token ? (
+                {token ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (
                   <Auth />

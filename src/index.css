@@ -7,6 +7,11 @@
     @apply text-gray-700 bg-yellow-500 focus:outline-none hover:bg-yellow-600 rounded transition-colors duration-150;
   }
 
+  .btn-prim {
+    @apply text-white bg-yellow-600 focus:outline-none hover:bg-yellow-500 rounded-full transition-colors duration-150;
+  }
+
+
   .btn-sec {
     @apply text-gray-700 bg-yellow-400 focus:outline-none hover:bg-yellow-500 rounded transition-colors duration-150;
   }

@@ -5,7 +5,7 @@ import "./hero.css";
 export default function HeroView () {
   return (
     <div
-      className="-mt-20 xl:-mt-12 heroku flex justify-center flex-col text-white"
+      className="-mt-20 xl:-mt-16 heroku flex justify-center flex-col text-white"
       style={{ minHeight: "37rem" }}
     >
       <div className="mt-8 mx-8 xl:mx-32">

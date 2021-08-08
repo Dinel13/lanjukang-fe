@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import logo from "../../assets/J.png";
@@ -9,11 +9,12 @@ import SideNav from "./component/SideNav";
 import Auth from "./component/AuthButton";
 
 export default function Navbar() {
+  const location = useLocation();
   const token = useSelector((state) => state.auth.token);
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
-
   const [offset, setOffset] = useState(0);
+  const pathname = location.pathname;
 
   useEffect(() => {
     //to get value of scrool
@@ -24,13 +25,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="bg-transparent h-full w-full text-white font-semibold">
+      <div className="bg-transparent h-full w-full text-white font-semibold mb-16">
         {/* BIG SCREEN NAV */}
         <nav
-          className={`fixed left-0 top-0 w-full lg:block hidden mb-6 z-20 ${
-            offset < 10.58
+          className={`fixed left-0 top-0 w-full lg:block hidden z-20 ${
+            offset < 10.58 && pathname === "/"
               ? "bg-transparent"
-              : "bg-gray-50 text-gray-800 shadow-lg"
+              : "bg-gray-50 text-gray-800 shadow-md"
           }`}
         >
           <div className="mx-auto container px-6 py-2 xl:py-0">
@@ -92,12 +93,12 @@ export default function Navbar() {
         </nav>
 
         {/* SMALL SCREEN NAV */}
-        <nav className="bg-white block lg:hidden mb-20">
+        <nav className="bg-white block lg:hidden">
           <div
             className={`pixed py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
-              offset < 10.58
+              offset < 10.58 && pathname === "/"
                 ? "bg-transparent"
-                : "bg-gray-50 text-gray-800 shadow-lg"
+                : "bg-gray-50 text-gray-800 shadow-md"
             }`}
           >
             <div className="flex items-center">

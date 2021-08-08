@@ -8,11 +8,12 @@ import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import { HomeContainer } from "./pages/Home/HomeContainer";
 
 const Login = lazy(() => import("./pages/Login/Login"));
+const Home = lazy(() => import("./pages/Home/Home"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function App() {
     route = (
       <Switch>
         <Route path="/" exact>
-          <HomeContainer />
+          <Home />
         </Route>
         <Route path="/masuk" exact>
           <Login />
@@ -44,14 +45,16 @@ export default function App() {
         <Route path="/akunku" exact>
           <MyAccount />
         </Route>
-        <Route path="/perjalanan" exact>
+        <Route path="/perjalanan" exact></Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     );
   } else {
     <Switch>
       <Route path="/" exact>
-        <HomeContainer />
+        <Home />
       </Route>
       <Route path="/masuk" exact>
         <Login />
@@ -62,16 +65,17 @@ export default function App() {
       <Route path="/akunku" exact>
         <MyAccount />
       </Route>
-      <Route path="/perjalanan" exact>
+      <Route path="/perjalanan" exact></Route>
+      <Route path="*">
+        <NotFound />
       </Route>
     </Switch>;
   }
 
   return (
-    <div className="font-montserrat">
+    <div className="font-montserrat bg-gray-50">
       <Modal />
       <Navbar />
-
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>

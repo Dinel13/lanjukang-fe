@@ -3,7 +3,7 @@ import Hero from "./HeroView";
 import PopularDest from "./PopularDestView";
 import BecomePartner from "./BecomePartnerView";
 
-export function HomeContainer() {
+export default function Home() {
   return (
     <div>
       <Hero />

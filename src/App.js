@@ -6,14 +6,13 @@ import { login } from "./store/authSlice";
 
 import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
-import About from "./components/about/About";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { HomeContainer } from "./pages/Home/HomeContainer";
 
-const Login = lazy(() => import("./pages/Login"));
-const Register = lazy(() => import("./pages/Register"));
-const MyAccount = lazy(() => import("./pages/MyAccount"));
-const Trip = lazy(() => import("./pages/Trip"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Register = lazy(() => import("./pages/Register/Register"));
+const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -30,14 +29,13 @@ export default function App() {
   });
   let route;
 
-  if (token) {
+  if (!token) {
     route = (
       <Switch>
         <Route path="/" exact>
-          <About />
+          <HomeContainer />
         </Route>
         <Route path="/masuk" exact>
-          fdsds
           <Login />
         </Route>
         <Route path="/daftar" exact>
@@ -47,18 +45,16 @@ export default function App() {
           <MyAccount />
         </Route>
         <Route path="/perjalanan" exact>
-          <Trip />
         </Route>
       </Switch>
     );
   } else {
     <Switch>
       <Route path="/" exact>
-        <About />
+        <HomeContainer />
       </Route>
       <Route path="/masuk" exact>
         <Login />
-        dasd
       </Route>
       <Route path="/daftar" exact>
         <Register />
@@ -67,7 +63,6 @@ export default function App() {
         <MyAccount />
       </Route>
       <Route path="/perjalanan" exact>
-        <Trip />
       </Route>
     </Switch>;
   }
@@ -75,11 +70,12 @@ export default function App() {
   return (
     <div className="font-montserrat">
       <Modal />
-      <HomeContainer />
-      <Footer />
+      <Navbar />
+
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>
       </main>
+      <Footer />
     </div>
   );
 }

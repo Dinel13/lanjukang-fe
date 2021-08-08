@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import PendingButton from "../components/button/Pending";
-import SubmitFull from "../components/button/Submit";
+import PendingButton from "../../components/button/Pending";
+import SubmitFull from "../../components/button/Submit";
 
-import { signup } from "../store/authAction";
+import { signup } from "../../store/authAction";
 
 export default function Login() {
   const dispatch = useDispatch();

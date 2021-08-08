@@ -8,7 +8,7 @@ import Nav from "./component/NavLinks";
 import SideNav from "./component/SideNav";
 import Auth from "./component/AuthButton";
 
-export default function NavView() {
+export default function Navbar() {
   const token = useSelector((state) => state.auth.token);
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);

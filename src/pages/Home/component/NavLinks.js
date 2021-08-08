@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function NavLinks() {
   return (
     <div className=" hidden lg:flex">
       <Link

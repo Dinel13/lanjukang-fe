@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/J.png";
-import Auth from "./Auth";
+import logo from "../../../assets/J.png";
+import Auth from "./AuthButton";
 
 export default function SideNav({ show, setShow, token }) {
   return (

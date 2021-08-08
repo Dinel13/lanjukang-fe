@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Auth() {
+export default function AuthButton() {
   return (
     <div className="flex items-end">
       <Link

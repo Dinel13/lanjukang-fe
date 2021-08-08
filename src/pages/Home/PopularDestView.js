@@ -1,8 +1,8 @@
 import React from "react";
 
-import Card from "./Card-tujuan";
+import Card from "../../components/popular-dest/Card-tujuan";
 
-export default function Popular() {
+export default function PopularDestView() {
   return (
     <div className="container px-8 py-10 sm:pt-14 lg:pt-16  mx-auto">
       <h2 className="sm:text-3xl lg:text-4xl text-2xl font-bold  text-gray-900">

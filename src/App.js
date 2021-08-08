@@ -4,14 +4,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import { login } from "./store/authSlice";
 
-import Fulnav from "./components/nav/Fulnav";
 import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
 import About from "./components/about/About";
-import Hero from "./components/hero/Hero";
-import Popular from "./components/popular-dest/Popular-destination";
-import BecomePartner from "./components/be-our-partner/BecomePartner";
 import Footer from "./components/footer/Footer";
+import { HomeContainer } from "./pages/Home/HomeContainer";
 
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
@@ -78,10 +75,7 @@ export default function App() {
   return (
     <div className="font-montserrat">
       <Modal />
-      <Fulnav />
-      <Hero /> 
-      <Popular />   
-      <BecomePartner />  
+      <HomeContainer />
       <Footer />
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>

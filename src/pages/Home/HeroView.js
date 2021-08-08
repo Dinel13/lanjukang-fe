@@ -2,7 +2,7 @@ import React from "react";
 
 import "./hero.css";
 
-export default function Hero() {
+export default function HeroView () {
   return (
     <div
       className="-mt-20 xl:-mt-12 heroku flex justify-center flex-col text-white"

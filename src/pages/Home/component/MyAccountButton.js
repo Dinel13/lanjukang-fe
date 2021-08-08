@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function MyAccount({ profile, setProfile }) {
+export default function MyAccountButton({ profile, setProfile }) {
   return (
     <div className="ml-6 relative">
       <div

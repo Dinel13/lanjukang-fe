@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import logo from "../../assets/J.png";
-import MyAccount from "./MyAccount";
-import Nav from "./Nav";
-import SideNav from "./SideNav";
-import Auth from "./Auth";
+import MyAccount from "./component/MyAccountButton";
+import Nav from "./component/NavLinks";
+import SideNav from "./component/SideNav";
+import Auth from "./component/AuthButton";
 
-export default function Fulnav() {
+export default function NavView() {
   const token = useSelector((state) => state.auth.token);
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);

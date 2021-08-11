@@ -8,6 +8,8 @@ import Loading from "./components/loading/LoadingFull";
 import Modal from "./components/modal/Modal";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import DetailTrip from "./pages/TirpDetail/DetailTrip";
 
 const Login = lazy(() => import("./pages/Login/Login"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -44,6 +46,12 @@ export default function App() {
         </Route>
         <Route path="/akunku" exact>
           <MyAccount />
+        </Route>
+        <Route path="/search" exact>
+          <SearchPage />
+        </Route>
+        <Route path="/detail-trip" exact>
+          <DetailTrip />
         </Route>
         <Route path="/perjalanan" exact></Route>
         <Route path="*">

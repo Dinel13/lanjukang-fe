@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card() {
+export default function CardTujuan() {
   return (
     <div className="p-3 sm:w-1/2 md:w-1/3 lg:w-1/4">
       <div class="bg-white relative shadow-lg hover:shadow-xl duration-500 rounded-lg">

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../../components/popular-dest/Card-tujuan";
+import Card from "../../components/Card/CardTrip";
 
 export default function PopularDestView() {
   return (

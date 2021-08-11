@@ -31,7 +31,8 @@ export default function Navbar() {
           className={`fixed left-0 top-0 w-full lg:block hidden z-20 ${
             offset < 10.58 && pathname === "/"
               ? "bg-transparent"
-              : "bg-gray-50 text-gray-800 shadow-md"
+              : " text-gray-800 shadow-md bg-gradient-to-r from-gray-100  to-yellow-200"
+              // : "bg-gray-50 text-gray-800 shadow-md bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
           }`}
         >
           <div className="mx-auto container px-6 py-2 xl:py-0">

@@ -24,7 +24,7 @@ export default function AuthButton() {
       </Link>
       <Link
         to="/daftar"
-        className="inline-flex items-center rounded-xl leading-tight text-sm p-2 btn-prim"
+        className="inline-flex items-center rounded-xl leading-tight text-sm p-2 btn-pri"
       >
          Daftar
         <svg

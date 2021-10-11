@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import logo from "../../assets/J.png";
+import logo from "../../assets/logo1.png";
 import MyAccount from "./component/MyAccountButton";
 import Nav from "./component/NavLinks";
 import SideNav from "./component/SideNav";
@@ -39,9 +39,9 @@ export default function Navbar() {
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
               <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
-                <Link to="/" className="flex items-center w-24">
-                  <img src={logo} alt="logo" className="h-8 mr-1" />
-                  <p className="text-lg tracking-wide font-bold">Jokkaki</p>
+                <Link to="/" className="flex items-center">
+                  <img src={logo} alt="logo" className="h-10 mr-1" />
+                  <p className="text-lg tracking-widest font-bold">Lanjukang</p>
                 </Link>
               </div>
               <div className="flex items-center">

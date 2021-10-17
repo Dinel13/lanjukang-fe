@@ -24,10 +24,9 @@ export default function App() {
   React.useEffect(() => {
     if (localStorage.getItem("pj_a")) {
       const data = JSON.parse(localStorage.getItem("pj_a"));
-      const _token = data.token.split("9gTe1Sk")[0];
-      const userId = data.token.split("9gTe1Sk")[1].split("KS1gtek6")[0];
+      const _token = data.token.split("9gTe1Sk")[1];
       const name = data.token.split("9gTe1Sk")[1].split("KS1gtek6")[1];
-      dispatch(login({ token: _token, userId, name }));
+      dispatch(login({ token: _token, name }));
     }
   });
   let route;

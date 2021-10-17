@@ -22,7 +22,7 @@ export const login = (email, password, successLogin, failLogin) => {
       if (!response.ok) {
         throw new Error(result.message || "Tidak bisa masuk");
       }
-      dispatch(loginSlice(result));
+      dispatch(loginSlice(result.user));
       successLogin();
     } catch (error) {
       dispatch(
@@ -58,7 +58,7 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
       if (!response.ok) {
         throw new Error(result.message || "Tidak bisa mendaftar!");
       }
-      dispatch(loginSlice(result));
+      dispatch(loginSlice(result.user));
       succesSingup();
     } catch (error) {
       dispatch(

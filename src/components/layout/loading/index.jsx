@@ -1,8 +1,6 @@
-import React from "react";
-
 import style from "./loading.module.css";
 
-export default function Loading() {
+const Loading = () => {
   return (
     <div className="w-full z-50 flex flex-col items-center justify-center mb-5">
       <div
@@ -17,3 +15,5 @@ export default function Loading() {
     </div>
   );
 }
+
+export default Loading;

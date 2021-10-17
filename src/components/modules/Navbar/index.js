@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import logo from "../../assets/logo1.png";
-import MyAccount from "./component/MyAccountButton";
-import Nav from "./component/NavLinks";
-import SideNav from "./component/SideNav";
-import Auth from "./component/AuthButton";
+import logo from "../../../assets/logo1.png";
+import MyAccount from "./MyAccountButton";
+import Nav from "./NavLinks";
+import SideNav from "./SideNav";
+import Auth from "./AuthButton";
 
 export default function Navbar() {
   const location = useLocation();
   const token = useSelector((state) => state.auth.token);
+  const name = useSelector((state) => state.auth.name);
+  
+  console.log(name);
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
   const [offset, setOffset] = useState(0);

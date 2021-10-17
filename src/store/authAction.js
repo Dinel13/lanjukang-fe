@@ -1,5 +1,5 @@
 import { login as loginSlice } from "./authSlice";
-import { showNotif } from "./uiSlice";
+import { showNotif } from "./notifSlice";
 
 export const login = (email, password, successLogin, failLogin) => {
   return async (dispatch) => {
@@ -20,6 +20,7 @@ export const login = (email, password, successLogin, failLogin) => {
 
       const result = await response.json();
       if (!response.ok) {
+        console.log(result);
         throw new Error(result.message || "Tidak bisa masuk");
       }
       dispatch(loginSlice(result.user));
@@ -27,7 +28,7 @@ export const login = (email, password, successLogin, failLogin) => {
     } catch (error) {
       dispatch(
         showNotif({
-          title: "Gagal masuk",
+          status: "Error",
           message: error.message,
           action: null,
         })
@@ -63,7 +64,7 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
     } catch (error) {
       dispatch(
         showNotif({
-          title: "Gagal mendaftar",
+          status: "Error",
           message: error.message,
           action: null,
         })

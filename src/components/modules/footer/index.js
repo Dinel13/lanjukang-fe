@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/J.png";
+import logo from "../../../assets/logo1.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-yellow-400 text-gray-600 body-font">
+    <footer className="bg-yellow-400 text-gray-600 body-font mt-20">
       <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
         <Link
           to="/"
           className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
         >
+          <div className="rounded-full bg-white w-10 h-10 flex items-center justify-center">
           <img src={logo} alt="logo" className="h-8 mr-1" />
+          </div>
 
-          <span className="ml-3 text-xl">Jokkaki</span>
+          <span className="ml-3 text-lg tracking-widest ">Lanjukang</span>
         </Link>
         <div className="flex sm:mt-0 mt-4">
           <Link to="/" className="text-sm text-gray-600 sm:ml-4 pl-4 sm:border-l-2 sm:border-gray-400 sm:py-1">

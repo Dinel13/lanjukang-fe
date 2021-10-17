@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logout } from "../../store/authSlice";
-import { showNotif, hideNotif } from "../../store/uiSlice";
+import { showNotif, hideNotif } from "../../store/notifSlice";
 
 export default function MyAccount() {
   const dispatch = useDispatch();

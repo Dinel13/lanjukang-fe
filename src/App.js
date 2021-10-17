@@ -4,10 +4,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import { login } from "./store/authSlice";
 
-import Loading from "./components/loading/LoadingFull";
-import Modal from "./components/modal/Modal";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/footer/Footer";
+import Loading from "./components/layout/loading/Full";
+import Alert from "./components/layout/Alert";
+import Navbar from "./components/modules/Navbar";
+import Footer from "./components/modules/footer";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import DetailTrip from "./pages/TirpDetail/DetailTrip";
 
@@ -22,13 +22,13 @@ export default function App() {
   const token = useSelector((state) => state.auth.token);
 
   React.useEffect(() => {
-    if (localStorage.getItem("pj_a")) {
-      const data = JSON.parse(localStorage.getItem("pj_a"));
-      const _token = data.token.split("9gTe1Sk")[1];
-      const name = data.token.split("9gTe1Sk")[1].split("KS1gtek6")[1];
-      dispatch(login({ token: _token, name }));
-    }
-  });
+      if (!token && localStorage.getItem("pj_ayt")) {
+        const data = JSON.parse(localStorage.getItem("pj_ayt"));
+        const [ token, userId, name ]= data.split("9gTe1Sku");
+        dispatch(login({ token, userId, name }));
+      }
+  }, [dispatch, token]);
+
   let route;
 
   if (!token) {
@@ -44,7 +44,7 @@ export default function App() {
           <Register />
         </Route>
         <Route path="/akunku" exact>
-          <MyAccount />
+          <Redirect to="/masuk" />
         </Route>
         <Route path="/search" exact>
           <SearchPage />
@@ -64,10 +64,10 @@ export default function App() {
         <Home />
       </Route>
       <Route path="/masuk" exact>
-        <Login />
+        <Redirect to="/akunku" />
       </Route>
       <Route path="/daftar" exact>
-        <Register />
+        <Redirect to="/akunku" />
       </Route>
       <Route path="/akunku" exact>
         <MyAccount />
@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className="font-montserrat bg-gray-50">
-      <Modal />
+      <Alert />
       <Navbar />
       <main>
         <Suspense fallback={<Loading />}>{route}</Suspense>

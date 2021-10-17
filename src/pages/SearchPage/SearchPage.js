@@ -1,5 +1,5 @@
 import React from "react";
-import CardTrip from "../../components/Card/CardTrip";
+import CardTrip from "../../components/elements/Card/CardTrip";
 
 export default function SearchPage() {
   return (

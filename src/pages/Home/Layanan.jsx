@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../../components/Card/CardLayanan";
+import Card from "../../components/elements/Card/CardLayanan";
 
 export default function Layanan() {
    return (

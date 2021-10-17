@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import authReducer from "./authSlice";
-import uiReducer from "./uiSlice";
+import notifReducer from "./notifSlice";
 
 const store = configureStore({
-  reducer: { auth: authReducer, ui: uiReducer },
+  reducer: { auth: authReducer, notif: notifReducer },
 });
 
 export default store;

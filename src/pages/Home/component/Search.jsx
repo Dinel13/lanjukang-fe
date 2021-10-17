@@ -9,7 +9,8 @@ const Search = () => {
       message: "",
    });
 
-   const { search, results, searched, message } = values;
+   // const { search, results, searched, message } = values;
+   const { search } = values;
 
    const searchSubmit = (e) => {
       e.preventDefault();

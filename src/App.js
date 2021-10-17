@@ -2,37 +2,59 @@ import React, { Suspense, lazy } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import { login } from "./store/authSlice";
+import { login, selectToken } from "./store/authSlice";
 
 import Loading from "./components/layout/loading/Full";
 import Alert from "./components/layout/Alert";
 import Navbar from "./components/modules/Navbar";
 import Footer from "./components/modules/footer";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import DetailTrip from "./pages/TirpDetail/DetailTrip";
+import Home from "./pages/Home/Home";
 
 const Login = lazy(() => import("./pages/Login/Login"));
-const Home = lazy(() => import("./pages/Home/Home"));
+// const Home = lazy(() => import("./pages/Home/Home"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
+const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
+const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-export default function App() {
+function App() {
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.auth.token);
+  const token = useSelector(selectToken);
 
   React.useEffect(() => {
-      if (!token && localStorage.getItem("pj_ayt")) {
-        const data = JSON.parse(localStorage.getItem("pj_ayt"));
-        const [ token, userId, name ]= data.split("9gTe1Sku");
-        dispatch(login({ token, userId, name }));
-      }
-  }, [dispatch, token]);
+    if (localStorage.getItem("pj_ayt")) {
+      const data = JSON.parse(localStorage.getItem("pj_ayt"));
+      const [token, userId, name] = data.split("9gTe1Sku");
+      dispatch(login({ token, userId, name }));
+    }
+  }, [dispatch]);
 
-  let route;
+  let routes;
 
-  if (!token) {
-    route = (
+  if (token) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/masuk" exact>
+          <Redirect to="/" />
+        </Route>
+        <Route path="/daftar" exact>
+          <Redirect to="/" />
+        </Route>
+        <Route path="/akunku" exact>
+          <MyAccount />
+        </Route>
+        <Route path="/perjalanan" exact></Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    );
+  } else {
+    routes = (
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -44,7 +66,7 @@ export default function App() {
           <Register />
         </Route>
         <Route path="/akunku" exact>
-          <Redirect to="/masuk" />
+          <Redirect to="/masu" />
         </Route>
         <Route path="/search" exact>
           <SearchPage />
@@ -58,25 +80,6 @@ export default function App() {
         </Route>
       </Switch>
     );
-  } else {
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-      <Route path="/masuk" exact>
-        <Redirect to="/akunku" />
-      </Route>
-      <Route path="/daftar" exact>
-        <Redirect to="/akunku" />
-      </Route>
-      <Route path="/akunku" exact>
-        <MyAccount />
-      </Route>
-      <Route path="/perjalanan" exact></Route>
-      <Route path="*">
-        <NotFound />
-      </Route>
-    </Switch>;
   }
 
   return (
@@ -84,9 +87,11 @@ export default function App() {
       <Alert />
       <Navbar />
       <main>
-        <Suspense fallback={<Loading />}>{route}</Suspense>
+        <Suspense fallback={<Loading />}>{routes}</Suspense>
       </main>
       <Footer />
     </div>
   );
 }
+
+export default App;

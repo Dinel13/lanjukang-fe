@@ -60,7 +60,7 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
         throw new Error(result.message || "Tidak bisa mendaftar!");
       }
       dispatch(loginSlice(result.user));
-      succesSingup();
+      dispatch(succesSingup());
     } catch (error) {
       dispatch(
         showNotif({

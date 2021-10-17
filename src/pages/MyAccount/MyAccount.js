@@ -4,13 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { logout, selectUserId } from "../../store/authSlice";
 import { showNotif, hideNotif } from "../../store/notifSlice";
+import UpdatePhoto from "./UpdatePhoto.js";
 
 export default function MyAccount() {
   const dispatch = useDispatch();
   const history = useHistory();
   const id = useSelector(selectUserId);
   const [user, setUser] = useState(null);
+  const [isEditPhoto, setIsEditPhoto] = useState(false);
 
+  const editPhoto = () => {
+    setIsEditPhoto(prev => !prev);
+  }
   // get user info
   useEffect(() => {
     const getUser = async () => {
@@ -81,6 +86,7 @@ export default function MyAccount() {
 
   return (
     <div className="bg-white w-full md:w-5/6 lg:md-4/6 mx-auto overflow-hidden mt-24 ">
+     { isEditPhoto && <UpdatePhoto cancel={editPhoto} />}
       <h2 className="text-center text-3xl mt-4 font-medium">My Account</h2>
       {user && (
         <>
@@ -115,6 +121,9 @@ export default function MyAccount() {
                 {user.full_name}
               </h3>
               <p className="mt-1 text-sm text-gray-500">{user.nick_name}</p>
+              <button onClick={editPhoto}>
+                Edit Profile Image
+              </button>
             </div>
             <div className="ml-auto flex flex-col sm:flex-row items-center ">
               <Link
@@ -124,7 +133,7 @@ export default function MyAccount() {
                     userData: user,
                   },
                 }}
-                className="p-2 mb-2  sm:mb-0 btn-sec"
+                className="p-2.5 mb-2  sm:mb-0 btn-sec"
               >
                 Update
               </Link>
@@ -133,7 +142,7 @@ export default function MyAccount() {
                   dispatch(logout());
                   history.push("/");
                 }}
-                className="btn-pri p-2 ml-2 leading-6"
+                className="btn-las p-2 ml-2 leading-6"
               >
                 Log Out
               </button>

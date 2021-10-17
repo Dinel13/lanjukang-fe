@@ -25,8 +25,9 @@ function App() {
   React.useEffect(() => {
     if (localStorage.getItem("pj_ayt")) {
       const data = JSON.parse(localStorage.getItem("pj_ayt"));
-      const [token, userId, name] = data.split("9gTe1Sku");
-      dispatch(login({ token, userId, name }));
+      const [token, id, name] = data.split("9gTe1Sku");
+      console.log(token, id, name);
+      dispatch(login({ token, id, name }));
     }
   }, [dispatch]);
 

@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { logout } from "../../store/authSlice";
+import { logout, selectUserId } from "../../store/authSlice";
 import { showNotif, hideNotif } from "../../store/notifSlice";
 
 export default function MyAccount() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const id = useSelector((state) => state.auth.userId);
-  const token = useSelector((state) => state.auth.token);
+  const id = useSelector(selectUserId);
   const [user, setUser] = useState(null);
+  console.log(id);
   useEffect(() => {
     const getUser = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_SERVER_URL}/user/${id}`,
+          `${process.env.REACT_APP_SERVER_URL}/user/detail/${id}`,
           {
             method: "GET",
           }

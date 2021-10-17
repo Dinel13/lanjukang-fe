@@ -10,7 +10,8 @@ export default function MyAccount() {
   const history = useHistory();
   const id = useSelector(selectUserId);
   const [user, setUser] = useState(null);
-  console.log(id);
+
+  // get user info
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -28,7 +29,7 @@ export default function MyAccount() {
       } catch (error) {
         dispatch(
           showNotif({
-            title: "Gagal masuk",
+            status: "Error",
             message: error.message,
             action: null,
           })
@@ -79,33 +80,41 @@ export default function MyAccount() {
   // };
 
   return (
-    <div className="bg-white w-full md:w-5/6 lg:md-4/6 mx-auto overflow-hidden ">
+    <div className="bg-white w-full md:w-5/6 lg:md-4/6 mx-auto overflow-hidden mt-24 ">
       <h2 className="text-center text-3xl mt-4 font-medium">My Account</h2>
       {user && (
         <>
           <div className="px-4 py-5 flex items-end sm:px-6">
             <a
-              href={process.env.REACT_APP_SERVER_URL_IMAGE + "/" + user.image}
+              href={
+                user.image
+                  ? process.env.REACT_APP_SERVER_URL_IMAGE +
+                    "/user/" +
+                    user.image
+                  : ""
+              }
               rel="noreferrer"
               target="_blank"
             >
               <img
                 alt="test"
                 className="bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "120px", width: "120px" }}
                 src={
                   user.image
-                    ? process.env.REACT_APP_SERVER_URL_IMAGE + "/" + user.image
-                    : ""
+                    ? process.env.REACT_APP_SERVER_URL_IMAGE +
+                      "/user/" +
+                      user.image
+                    : "https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_2.png"
                 }
               />
             </a>
 
             <div className="sm:mb-1.5">
               <h3 className="text-xl leading-none mb-1.5 mt-1 font-medium text-gray-900">
-                {user.publicId}
+                {user.full_name}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{user.motto}</p>
+              <p className="mt-1 text-sm text-gray-500">{user.nick_name}</p>
             </div>
             <div className="ml-auto flex flex-col sm:flex-row items-center ">
               <Link
@@ -121,8 +130,8 @@ export default function MyAccount() {
               </Link>
               <button
                 onClick={() => {
-                  history.push("/");
                   dispatch(logout());
+                  history.push("/");
                 }}
                 className="btn-pri p-2 ml-2 leading-6"
               >
@@ -134,22 +143,6 @@ export default function MyAccount() {
             <dl>
               <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
-                  Nama Lengkap
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {user.name}
-                </dd>
-              </div>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">
-                  Nama panggilan
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {user.nickName}
-                </dd>
-              </div>
-              <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">
                   Alamat email
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -157,9 +150,9 @@ export default function MyAccount() {
                 </dd>
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">Fakultas</dt>
+                <dt className="text-sm font-medium text-gray-500">Phone</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {user.fakultas}
+                  {user.phone}
                 </dd>
               </div>
               <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -179,7 +172,7 @@ export default function MyAccount() {
               <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">Alamat</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {user.alamat}
+                  {user.address}
                 </dd>
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

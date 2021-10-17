@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import PendingButton from "../../components/elements/button/Pending";
 import SubmitFull from "../../components/elements/button/Submit";
 import { login } from "../../store/authAction";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
   const email = useRef();
   const password = useRef();
   const [pending, setPending] = useState(null);

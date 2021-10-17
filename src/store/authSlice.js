@@ -22,7 +22,9 @@ const authSlice = createSlice({
     },
     logout(state) {
       localStorage.removeItem("pj_ayt");
-      state = initialState;
+      state.token = null;
+      state.id = null;
+      state.name = null;
     },
   },
 });

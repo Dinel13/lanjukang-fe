@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../store/authSlice";
 import { hideNotif, notifData } from "../../../store/notifSlice";
 
 export default function Alert() {
@@ -8,6 +9,13 @@ export default function Alert() {
   const dispatch = useDispatch();
 
   const { message, action, status } = useSelector(notifData);
+  let realAction
+  if (action === "logout") {
+    realAction = () => {
+      dispatch(logout());
+    }
+  }
+
 
   const hideModal = useCallback(() => {
     setShowModal(null);
@@ -22,10 +30,10 @@ export default function Alert() {
     window.onclick = function (event) {
       if (event.target === modal) {
       } else {
-        setShowModal(null);
+        hideModal();
       }
     };
-  }, [message, modal]);
+  }, [message, modal, hideModal]);
 
   React.useEffect(() => {
     let timer;
@@ -69,7 +77,7 @@ export default function Alert() {
                     type="button"
                     onClick={(e) => {
                       e.preventDefault();
-                      action();
+                      realAction();
                     }}
                   >
                     Yakin

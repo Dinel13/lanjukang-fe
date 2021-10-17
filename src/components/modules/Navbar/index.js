@@ -7,13 +7,12 @@ import MyAccount from "./MyAccountButton";
 import Nav from "./NavLinks";
 import SideNav from "./SideNav";
 import Auth from "./AuthButton";
+import { selectToken } from "../../../store/authSlice";
 
 export default function Navbar() {
   const location = useLocation();
-  const token = useSelector((state) => state.auth.token);
-  const name = useSelector((state) => state.auth.name);
+  const token = useSelector(selectToken);
   
-  console.log(name);
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
   const [offset, setOffset] = useState(0);

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   message: "",
   status: "",
-  action: null,
+  action: "",
 }
 
 const notifSlice = createSlice({

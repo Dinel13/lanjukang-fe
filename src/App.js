@@ -8,12 +8,13 @@ import Loading from "./components/layout/loading/Full";
 import Alert from "./components/layout/Alert";
 import Navbar from "./components/modules/Navbar";
 import Footer from "./components/modules/footer";
-import Home from "./pages/Home/Home";
+// import Home from "./pages/Home/Home";
 
 const Login = lazy(() => import("./pages/Login/Login"));
-// const Home = lazy(() => import("./pages/Home/Home"));
+const Home = lazy(() => import("./pages/Home/Home"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
+const UpdateAccount = lazy(() => import("./pages/MyAccount/Update"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -26,7 +27,6 @@ function App() {
     if (localStorage.getItem("pj_ayt")) {
       const data = JSON.parse(localStorage.getItem("pj_ayt"));
       const [token, id, name] = data.split("9gTe1Sku");
-      console.log(token, id, name);
       dispatch(login({ token, id, name }));
     }
   }, [dispatch]);
@@ -48,6 +48,9 @@ function App() {
         <Route path="/akunku" exact>
           <MyAccount />
         </Route>
+        <Route path="/akunku/update" exact>
+          <UpdateAccount />
+        </Route>
         <Route path="/perjalanan" exact></Route>
         <Route path="*">
           <NotFound />
@@ -67,7 +70,7 @@ function App() {
           <Register />
         </Route>
         <Route path="/akunku" exact>
-          <Redirect to="/masu" />
+          <Redirect to="/masuk" />
         </Route>
         <Route path="/search" exact>
           <SearchPage />

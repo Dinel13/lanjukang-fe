@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logout, selectUserId } from "../../store/authSlice";
-import { showNotif, hideNotif } from "../../store/notifSlice";
+import { showNotif } from "../../store/notifSlice";
 import UpdatePhoto from "./UpdatePhoto.js";
 
 export default function MyAccount() {

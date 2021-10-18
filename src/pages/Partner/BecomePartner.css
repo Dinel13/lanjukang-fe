@@ -1,0 +1,20 @@
+.imageBecomePartner {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../../assets/bg/7.jpg");
+  /* url("../../assets/bg/back.jpg"); */
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+}
+
+@media (max-width: 768px) {
+  .imageBecomePartner {
+    min-height: 40vh;
+  }
+}

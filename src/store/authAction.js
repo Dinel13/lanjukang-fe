@@ -20,7 +20,6 @@ export const login = (email, password, successLogin, failLogin) => {
 
       const result = await response.json();
       if (!response.ok) {
-        console.log(result);
         throw new Error(result.message || "Tidak bisa masuk");
       }
       dispatch(loginSlice(result.user));

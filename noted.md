@@ -7,3 +7,15 @@ bug kalau langsung redirect setelah login
 tambhakan field nama akun untuk user yang sudah memberi layanan
 - descrioptiom juga
 - medsos lain
+
+
+reload my account page ketika sudah upload image
+tampilkna gambar user di navbar
+
+gunakan toast untuk yang tidak memungkinkan pake allert
+
+UNTUK JADI PARTNER HARUS ADA NAMA DAN FOTO
+TAPI TIDAK AHARUS KAREN KITA MAU MEMUDAHLKAN
+
+ubah skema user jika jadi admin
+haruskan buat nama toko yang baru

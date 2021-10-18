@@ -15,6 +15,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
 const UpdateAccount = lazy(() => import("./pages/MyAccount/Update"));
+const BecomePartner = lazy(() => import("./pages/Partner/BecomePartner"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -26,8 +27,9 @@ function App() {
   React.useEffect(() => {
     if (localStorage.getItem("pj_ayt")) {
       const data = JSON.parse(localStorage.getItem("pj_ayt"));
-      const [token, id, name] = data.split("9gTe1Sku");
-      dispatch(login({ token, id, name }));
+      console.log(data);
+      const [token, id, role, name] = data.split("9gTe1Sku");
+      dispatch(login({ token, id, name, role }));
     }
   }, [dispatch]);
 
@@ -48,10 +50,13 @@ function App() {
         <Route path="/akunku" exact>
           <MyAccount />
         </Route>
+        <Route path="/become-partner" exact>
+          <BecomePartner />
+        </Route>
         <Route path="/akunku/update" exact>
           <UpdateAccount />
         </Route>
-        <Route path="/perjalanan" exact></Route>
+       
         <Route path="*">
           <NotFound />
         </Route>
@@ -77,6 +82,9 @@ function App() {
         </Route>
         <Route path="/detail-trip" exact>
           <DetailTrip />
+        </Route>
+        <Route path="/become-partner" exact>
+          <BecomePartner />
         </Route>
         <Route path="/perjalanan" exact></Route>
         <Route path="*">

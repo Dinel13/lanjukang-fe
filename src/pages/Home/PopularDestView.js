@@ -12,7 +12,7 @@ export default function PopularDestView() {
     const fetchPopularService = async () => {
       try {
         const result = await fetch(
-          `${process.env.REACT_APP_SERVER_URL}/service/list`,
+          `${process.env.REACT_APP_SERVER_URL}/service/pop`,
           {
             method: "GET",
             headers: {

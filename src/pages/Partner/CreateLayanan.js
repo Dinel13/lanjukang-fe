@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 
 import PendingButton from "../../components/elements/button/Pending";
 import { showNotif } from "../../store/notifSlice";
@@ -14,6 +15,7 @@ export default function CreateLayanan({ token, type }) {
   const capacityRef = useRef();
   const [pending, setPending] = React.useState(false);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     formRef.current.scrollIntoView({ behavior: "smooth" });
@@ -50,9 +52,18 @@ export default function CreateLayanan({ token, type }) {
       dispatch(
         showNotif({
           status: "Success",
-          message: "Data berhasil diupdate",
+          message: "Data berhasil disimpan",
           action: null,
         })
+      );
+      setTimeout(
+        history.push({
+          pathname: "/user/layanan/" + data.service.id,
+          state: {
+            service: data.service,
+          },
+        }),
+        1000
       );
     } catch (error) {
       dispatch(

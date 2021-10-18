@@ -88,7 +88,7 @@ export default function BecomeAdmin({ token }) {
                   />
                 </div>
                 <div>
-                  <label class="inline-flex items-center">
+                  <label className="inline-flex items-center">
                     <input
                       type="checkbox"
                       className="form-checkbox"

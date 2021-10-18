@@ -16,6 +16,7 @@ const Register = lazy(() => import("./pages/Register/Register"));
 const MyAccount = lazy(() => import("./pages/MyAccount/MyAccount"));
 const UpdateAccount = lazy(() => import("./pages/MyAccount/Update"));
 const BecomePartner = lazy(() => import("./pages/Partner/BecomePartner"));
+const MyDetailService = lazy(() => import("./pages/Partner/MyDetailService"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -55,8 +56,11 @@ function App() {
         </Route>
         <Route path="/akunku/update" exact>
           <UpdateAccount />
-        </Route>
-       
+        </Route> 
+        
+        <Route path="/user/layanan/:id" exact>
+          <MyDetailService />
+        </Route> 
         <Route path="*">
           <NotFound />
         </Route>

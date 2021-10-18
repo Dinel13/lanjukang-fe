@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import partner1 from "../../assets/partner-1.jpg";
 import partner2 from "../../assets/partner-2.jpg";
@@ -11,7 +12,11 @@ export default function BecomePartnerView() {
       </h2>
       <div className="my-8">
         <div className="flex items-center">
-          <img src={partner1} className="rounded-xl w-1/5 md:w-1/4 " alt="partner" />
+          <img
+            src={partner1}
+            className="rounded-xl w-1/5 md:w-1/4 "
+            alt="partner"
+          />
           <div className="pl-4 max-w-lg">
             <p className="text-md md:text-lg lg:text-lg font-semibold">
               Allows new opportunities for overseas sales
@@ -22,8 +27,12 @@ export default function BecomePartnerView() {
             </p>
           </div>
         </div>
-        <div className="flex items-center ml-10 sm:ml-16 md:ml-20 lg:ml-24 mt-4 md:-mt-8">
-          <img src={partner2} className="rounded-xl w-1/5 md:w-1/4" alt="partner" />
+        <div className="flex items-center ml-10 sm:ml-16 md:ml-20 lg:ml-24 xl:ml-44 mt-4 md:-mt-8">
+          <img
+            src={partner2}
+            className="rounded-xl w-1/5 md:w-1/4"
+            alt="partner"
+          />
           <div className="pl-4 max-w-lg">
             <p className="text-md md:text-lg lg:text-lg font-semibold">
               Established marketplace that provides a level of trust between you
@@ -36,7 +45,11 @@ export default function BecomePartnerView() {
           </div>
         </div>
         <div className="flex items-center mt-4 md:-mt-8">
-          <img src={partner3} className="rounded-xl w-1/5 md:w-1/4" alt="partner" />
+          <img
+            src={partner3}
+            className="rounded-xl w-1/5 md:w-1/4"
+            alt="partner"
+          />
           <div className="pl-4 max-w-lg">
             <p className="text-md md:text-lg lg:text-lg font-semibold">
               Reviews of your products and service may give new customers the
@@ -48,6 +61,14 @@ export default function BecomePartnerView() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Link
+          to="/become-partner"
+          className="btn-pri tracking-wider px-10 py-2.5 inline-block"
+        >
+          Jadi partner kami
+        </Link>
       </div>
     </div>
   );

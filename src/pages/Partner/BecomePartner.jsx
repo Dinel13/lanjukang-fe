@@ -13,6 +13,8 @@ export default function BecomePartner() {
    const token = useSelector(selectToken);
    const role = useSelector(selectRole)
 
+   console.log(role);
+
 
    const CardClickHandler = (item) => {
       setClickedLayanan(item)
@@ -29,7 +31,7 @@ export default function BecomePartner() {
 
    return (
       <div className="container px-8 mt-20 mx-auto">
-         {role !== 1 && <BecomeAdmin token={token} /> }
+         {role !== "1" && <BecomeAdmin token={token} /> }
          <div
             className="imageBecomePartner flex justify-center flex-col text-white"
          >

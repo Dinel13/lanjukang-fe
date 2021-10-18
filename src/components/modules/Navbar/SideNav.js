@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../../assets/J.png";
+import logo from "../../../assets/logo1.png";
 import Auth from "./AuthButton";
 
-export default function SideNav({ show, setShow, token }) {
+export default function SideNav({ show, setShow, name }) {
   return (
     <div
       className={
@@ -29,7 +29,7 @@ export default function SideNav({ show, setShow, token }) {
                     className="flex items-center w-24"
                   >
                     <img src={logo} alt="logo" className="h-6 mr-1" />
-                    <p className="text-lg tracking-wide font-medium">Jokkaki</p>
+                    <p className="text-lg tracking-wide font-medium">Lanjukang</p>
                   </Link>
                   <div
                     id="cross"
@@ -178,7 +178,7 @@ export default function SideNav({ show, setShow, token }) {
             </div>
             <div className="w-full pt-4">
               <hr className="-mx-4 border-gray-300 border mb-4 " />
-              {!token ? (
+              {name ? (
                 <div className="w-full flex items-center justify-between">
                   <div className="flex items-center">
                     <img
@@ -187,7 +187,7 @@ export default function SideNav({ show, setShow, token }) {
                       className="w-8 h-8 rounded-md"
                     />
                     <p className=" text-gray-800 text-base leading-4 ml-2">
-                      Ainun
+                      {name}
                     </p>
                   </div>
                   <ul className="flex">

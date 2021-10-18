@@ -5,7 +5,7 @@ export default function About() {
     <div className="bg-yellow-500">
       <div className="mx-auto container px-8 py-12">
         <h2 className="text-gray-50 text-center my-10 font-signika font-black text-7xl tracking-wider">
-          Apa itu Jokkaki?
+          Apa itu Lanjukang?
         </h2>
         <div className="flex items-center justify-center flex-wrap mt-24">
           <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 text-center p-3 text-gray-100 ">

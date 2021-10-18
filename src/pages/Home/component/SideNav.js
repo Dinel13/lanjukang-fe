@@ -29,7 +29,7 @@ export default function SideNav({ show, setShow, token }) {
                     className="flex items-center w-24"
                   >
                     <img src={logo} alt="logo" className="h-6 mr-1" />
-                    <p className="text-lg tracking-wide font-medium">Jokkaki</p>
+                    <p className="text-lg tracking-wide font-medium">Lanjukang</p>
                   </Link>
                   <div
                     id="cross"

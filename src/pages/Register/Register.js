@@ -39,7 +39,7 @@ export default function Login() {
     <div className="py-16">
       <div className="form-card dark:bg-gray-800">
         <h1 className="text-3xl font-semibold text-center text-gray-700 dark:text-white">
-          Daftar Jokkaki
+          Daftar Lanjukang
         </h1>
         <form className="mt-6" onSubmit={singupHandler}>
           <div>

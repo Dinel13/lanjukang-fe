@@ -133,7 +133,7 @@ export default function MyAccount() {
                     userData: user,
                   },
                 }}
-                className="p-2.5 mb-2  sm:mb-0 btn-sec"
+                className="btn-sec py-2 px-4 m-2 tracking-wide leading-6"
               >
                 Update
               </Link>
@@ -142,9 +142,9 @@ export default function MyAccount() {
                   dispatch(logout());
                   history.push("/");
                 }}
-                className="btn-las p-2 ml-2 leading-6"
+                className="btn-las py-2 px-4 m-2 tracking-wide leading-6"
               >
-                Log Out
+                Logout
               </button>
             </div>
           </div>

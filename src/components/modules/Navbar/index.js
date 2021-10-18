@@ -7,11 +7,11 @@ import MyAccount from "./MyAccountButton";
 import Nav from "./NavLinks";
 import SideNav from "./SideNav";
 import Auth from "./AuthButton";
-import { selectToken } from "../../../store/authSlice";
+import { selectName } from "../../../store/authSlice";
 
 export default function Navbar() {
   const location = useLocation();
-  const token = useSelector(selectToken);
+  const userName = useSelector(selectName);
   
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
@@ -85,7 +85,7 @@ export default function Navbar() {
                 >
                   Tawarkan jasa kamu
                 </Link>
-                {token ? (
+                {userName  ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (
                   <Auth />
@@ -134,7 +134,7 @@ export default function Navbar() {
               </div>
               <Link to="/" className="flex items-center w-24">
                 <img src={logo} alt="logo" className="h-6 mr-1" />
-                <p className="text-lg tracking-wide font-medium">Jokkaki</p>
+                <p className="text-lg tracking-wide font-medium">Lanjukang</p>
               </Link>
             </div>
             {/* <div className="flex items-center">
@@ -168,7 +168,7 @@ export default function Navbar() {
             </div> */}
           </div>
           {/*Mobile responsive sidebar*/}
-          <SideNav setShow={setShow} show={show} token={token} />
+          <SideNav setShow={setShow} show={show} name={userName} />
         </nav>
       </div>
     </>

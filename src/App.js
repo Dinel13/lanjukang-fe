@@ -19,6 +19,8 @@ const BecomePartner = lazy(() => import("./pages/Partner/BecomePartner"));
 const MyDetailService = lazy(() => import("./pages/Partner/MyDetailService"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
+const ForgotPassword = React.lazy(() => import("./pages/MyAccount/ForgotPassword"));
+const ResetPassword = React.lazy(() => import("./pages/MyAccount/ResetPassword"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
@@ -57,7 +59,6 @@ function App() {
         <Route path="/akunku/update" exact>
           <UpdateAccount />
         </Route> 
-        
         <Route path="/user/layanan/:id" exact>
           <MyDetailService />
         </Route> 
@@ -91,6 +92,12 @@ function App() {
           <BecomePartner />
         </Route>
         <Route path="/perjalanan" exact></Route>
+        <Route path="/reset-password/:token" exact>
+          <ResetPassword />
+        </Route>
+        <Route path="/lupa-password" exact>
+          <ForgotPassword />
+        </Route>
         <Route path="*">
           <NotFound />
         </Route>

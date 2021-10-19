@@ -101,7 +101,7 @@ export default function Navbar() {
             className={`py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
               offset < 10.58 && pathname === "/"
                 ? "bg-transparent"
-                : "bg-gray-50 text-gray-800 shadow-md"
+                : "text-gray-800 shadow-md bg-gradient-to-r from-gray-100  to-yellow-200"
             }`}
           >
             <div className="flex items-center">

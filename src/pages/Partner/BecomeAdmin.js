@@ -12,13 +12,29 @@ export default function BecomeAdmin({ token }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+
+  // check if user have token
+  if (!token) {
+    // push to login page with state to redirect to become admin
+    setTimeout(() => history.push({
+      pathname: "/masuk",
+      state: {
+        from : "/become-admin",
+      },
+    }), 500);
+  }
+
   const cancel = () => {
     history.goBack();
   };
 
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPending(true);
+    console.log(token);
     try {
       const result = await fetch(
         `${process.env.REACT_APP_SERVER_URL}/user/update-role`,
@@ -77,7 +93,7 @@ export default function BecomeAdmin({ token }) {
               <form onSubmit={handleSubmit} className="p-4 mt-2">
                 <div className="mb-3 space-y-2 w-full text-xs">
                   <label className="font-semibold text-gray-600 py-2">
-                    Nama Layanan <abbr title="required">*</abbr>
+                    Nama Layanan <small className="required"></small>
                   </label>
                   <input
                     placeholder="Nama Layanan"

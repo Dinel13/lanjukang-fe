@@ -26,4 +26,8 @@
   .link-scale {
     @apply transform-gpu transition hover:scale-105 duration-150 ease-in-out;
   }
+  .required:after {
+    content: " *";
+    color: red;
+  }
 }

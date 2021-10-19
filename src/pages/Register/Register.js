@@ -14,12 +14,7 @@ export default function Login() {
   const name = useRef();
   const [pending, setPending] = useState(null);
 
-  const onSuccesSingup = () => {
-    setPending(false);
-    setTimeout(() => history.push("/"), 1000);
-  };
-
-  const onFailSignup = () => setPending(false);
+  const onSuccesSingup =() => history.push("/")
 
   const singupHandler = (event) => {
     event.preventDefault();
@@ -30,7 +25,7 @@ export default function Login() {
         name.current.value,
         password.current.value,
         onSuccesSingup,
-        onFailSignup
+        setPending
       )
     );
   };

@@ -90,7 +90,7 @@ export default function CreateLayanan({ token, type }) {
               <div className="md:flex flex-row md:space-x-4 w-full text-xs">
                 <div className="mb-3 space-y-2 w-full text-xs">
                   <label className="font-semibold text-gray-600 py-2">
-                    Nama Layanan <abbr title="required">*</abbr>
+                    Nama Layanan <small className="required"></small>
                   </label>
                   <input
                     placeholder="Nama Layanan"
@@ -102,7 +102,7 @@ export default function CreateLayanan({ token, type }) {
                 </div>
                 <div className="mb-3 space-y-2 w-full text-xs">
                   <label className="font-semibold text-gray-600 py-2">
-                    Kapasitas Layanan <abbr title="required">*</abbr>
+                    Kapasitas Layanan <small className="required"></small>
                   </label>
                   <input
                     placeholder="Kapasitas Layanan"
@@ -117,7 +117,7 @@ export default function CreateLayanan({ token, type }) {
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
                     Harga Layanan (Rp/satu layanan){" "}
-                    <abbr title="required">*</abbr>
+                    <small className="required"></small>
                   </label>
                   <input
                     placeholder="Harga Layanan"
@@ -129,7 +129,7 @@ export default function CreateLayanan({ token, type }) {
                 </div>
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
-                    Location<abbr title="required">*</abbr>
+                    Location<small className="required"></small>
                   </label>
                   <select
                     className="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full "
@@ -149,7 +149,7 @@ export default function CreateLayanan({ token, type }) {
               <div className="md:flex md:flex-row md:space-x-4 w-full text-xs">
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
-                    Foto Layanan <abbr title="required">*</abbr>
+                    Foto Layanan <small className="required"></small>
                   </label>
                   <label className="inline-flex items-center appearance-none w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4">
                     <input
@@ -169,7 +169,7 @@ export default function CreateLayanan({ token, type }) {
               </div>
               <div className="flex-auto w-full mb-1 text-xs space-y-2 mt-2">
                 <label className="font-semibold text-gray-600 py-2">
-                  Deskripsi Layanan <abbr title="required">*</abbr>
+                  Deskripsi Layanan <small className="required"></small>
                 </label>
                 <textarea
                   required=""

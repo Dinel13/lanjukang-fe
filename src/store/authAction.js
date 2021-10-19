@@ -20,7 +20,7 @@ export const login = (email, password, successLogin, failLogin) => {
 
       const result = await response.json();
       if (!response.ok) {
-        throw new Error(result.message || "Tidak bisa masuk");
+        throw new Error(result.error.message || "Tidak bisa masuk");
       }
       dispatch(loginSlice(result.user));
       successLogin();
@@ -37,7 +37,7 @@ export const login = (email, password, successLogin, failLogin) => {
   };
 };
 
-export const signup = (email, name, password, succesSingup, failSignup) => {
+export const signup = (email, name, password, onSuccesSingup, setPending) => {
   return async (dispatch) => {
     try {
       const response = await await fetch(
@@ -45,7 +45,7 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
         {
           method: "POST",
           body: JSON.stringify({
-            name,
+            full_name: name,
             email,
             password,
           }),
@@ -56,10 +56,10 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
       );
       const result = await response.json();
       if (!response.ok) {
-        throw new Error(result.message || "Tidak bisa mendaftar!");
+        throw new Error(result.error.message || "Tidak bisa mendaftar!");
       }
       dispatch(loginSlice(result.user));
-      dispatch(succesSingup());
+      setTimeout(() => onSuccesSingup(), 1000);
     } catch (error) {
       dispatch(
         showNotif({
@@ -68,7 +68,8 @@ export const signup = (email, name, password, succesSingup, failSignup) => {
           action: null,
         })
       );
-      failSignup();
+    } finally {
+      setPending(false);
     }
   };
 };

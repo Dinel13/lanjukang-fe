@@ -34,7 +34,7 @@ const Search = () => {
       });
    }
    return (
-      <div className="inline-flex py-1 px-3 items-center bg-white rounded-3xl text-gray-800">
+      <div className="inline-flex py-1.5 px-3 items-center bg-white rounded-full text-gray-800">
          <form className="flex w-full" onSubmit={searchSubmit}>
             <div className="flex w-3/4">
                <input
@@ -44,7 +44,7 @@ const Search = () => {
                   onChange={handleChange}
                />
 
-               <button className="btn-ter ml-2 p-3 rounded-full" type="submit">
+               <button className="btn-sec ml-2 p-3 rounded-full" type="submit">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      className="h-5 w-5"

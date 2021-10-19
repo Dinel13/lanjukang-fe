@@ -4,7 +4,7 @@ import logo from "../../../assets/logo1.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-yellow-400 text-gray-600 body-font mt-20">
+    <footer className="bg-yellow-300 text-gray-600 body-font mt-20">
       <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
         <Link
           to="/"

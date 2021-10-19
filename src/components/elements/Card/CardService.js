@@ -4,7 +4,7 @@ export default function CardService({data}) {
   return (
     // <div className="p-3 sm:w-1/2 md:w-1/3 lg:w-1/4">
     <div className="p-3 max-w-xs">
-      <div className="bg-white relative shadow-lg hover:shadow-xl duration-500 rounded-lg">
+      <div className="bg-white border border-gray-300 relative shadow-lg transform duration-500 rounded-lg hover:shadow-xl hover:scale-105">
         <img
           className="rounded-lg h-56 w-60"
           src={process.env.REACT_APP_SERVER_URL_IMAGE + "/service/" + data.image}

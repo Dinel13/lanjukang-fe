@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 export default function NavLinks() {
   return (
-    <div className=" hidden lg:flex">
+    <div className="flex justify-center ml-2">
       <Link
         to="/perjalanan"
-        className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
+        className="flex items-center p-3 text-sm leading-5 focus:outline-none link-scale"
       >
         <span className="mr-2">
           <svg
@@ -31,7 +31,7 @@ export default function NavLinks() {
       </Link>
       <Link
         to="/penunjuk"
-        className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
+        className="flex p-3 items-center text-sm leading-5 focus:outline-none link-scale"
       >
         <span className="mr-2">
           <svg

@@ -30,17 +30,17 @@ export default function Navbar() {
       <div className="bg-transparent h-full w-full text-white font-semibold mb-16">
         {/* BIG SCREEN NAV */}
         <nav
-          className={`fixed left-0 top-0 w-full lg:block hidden z-20 ${
+          className={`fixed left-0 top-0 w-full nav:block hidden z-20 ${
             offset < 10.58 && pathname === "/"
               ? "bg-transparent"
               : " text-gray-800 shadow-md bg-gradient-to-r from-gray-100  to-yellow-200"
               // : "bg-gray-50 text-gray-800 shadow-md bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
           }`}
         >
-          <div className="mx-auto container px-6 py-2 xl:py-0">
+          <div className="mx-auto px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
-              <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+              <div className="flex py-4 w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                 <Link to="/" className="flex items-center">
                   <img src={logo} alt="logo" className="h-10 mr-1" />
                   <p className="text-lg tracking-widest font-bold">Lanjukang</p>
@@ -81,7 +81,7 @@ export default function Navbar() {
               <div className="flex items-center">
                 <Link
                   to="/become-partner"
-                  className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
+                  className="flex p-3 items-center text-sm leading-5 focus:outline-none link-scale"
                 >
                   Tawarkan layanan
                 </Link>
@@ -96,9 +96,9 @@ export default function Navbar() {
         </nav>
 
         {/* SMALL SCREEN NAV */}
-        <nav className="bg-white block lg:hidden">
+        <nav className="bg-white block nav:hidden">
           <div
-            className={`pixed py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
+            className={`py-4 px-4 md:px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40 ${
               offset < 10.58 && pathname === "/"
                 ? "bg-transparent"
                 : "bg-gray-50 text-gray-800 shadow-md"
@@ -107,7 +107,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <div
                 id="menu"
-                className="text-gray-800 mr-3"
+                className="mr-3 ml-2"
                 onClick={() => setShow(!show)}
               >
                 {show ? (
@@ -116,10 +116,10 @@ export default function Navbar() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="icon icon-tabler icon-tabler-menu-2"
-                    width={24}
-                    height={24}
+                    width={26}
+                    height={26}
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                     stroke="currentColor"
                     fill="none"
                     strokeLinecap="round"
@@ -133,8 +133,8 @@ export default function Navbar() {
                 )}
               </div>
               <Link to="/" className="flex items-center w-24">
-                <img src={logo} alt="logo" className="h-6 mr-1" />
-                <p className="text-lg tracking-wide font-medium">Lanjukang</p>
+                <img src={logo} alt="logo" className="h-8 mr-1" />
+                <p className="text-lg tracking-wider font-bold">Lanjukang</p>
               </Link>
             </div>
             {/* <div className="flex items-center">

@@ -22,4 +22,8 @@
   .form-card {
     @apply w-full max-w-md p-10 m-auto bg-gray-100 border-gray-300 border rounded-md shadow-xl;
   }
+
+  .link-scale {
+    @apply transform-gpu transition hover:scale-105 duration-150 ease-in-out;
+  }
 }

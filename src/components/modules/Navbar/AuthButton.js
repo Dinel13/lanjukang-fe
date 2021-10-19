@@ -6,7 +6,7 @@ export default function AuthButton() {
     <div className="flex items-center">
       <Link
         to="/masuk"
-        className="inline-flex items-center text-sm mr-2 p-1.5 font-bold btn-transparent border-r border-gray-300"
+        className="inline-flex items-center text-sm mr-2 p-1.5 font-bold btn-transparent border-r border-gray-300 link-scale"
       >
        
         Masuk
@@ -24,7 +24,7 @@ export default function AuthButton() {
       </Link>
       <Link
         to="/daftar"
-        className="inline-flex items-center rounded-xl leading-tight text-sm p-2 btn-pri"
+        className="inline-flex items-center leading-tight text-sm py-2 px-3 btn-pri"
       >
          Daftar
         <svg

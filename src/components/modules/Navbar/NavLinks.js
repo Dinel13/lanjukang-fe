@@ -5,7 +5,7 @@ export default function NavLinks() {
     <div className=" hidden lg:flex">
       <Link
         to="/perjalanan"
-        className="flex px-5 items-center py-6 text-sm leading-5  hover:text-gray-200   focus:outline-none transition duration-150 ease-in-out"
+        className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
       >
         <span className="mr-2">
           <svg
@@ -27,11 +27,11 @@ export default function NavLinks() {
             <rect x={14} y={14} width={6} height={6} rx={1} />
           </svg>
         </span>
-        Perjalanan
+        Kapal
       </Link>
       <Link
         to="/penunjuk"
-        className="flex px-5 items-center py-6 text-sm leading-5  hover:text-gray-200   focus:outline-none transition duration-150 ease-in-out"
+        className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
       >
         <span className="mr-2">
           <svg

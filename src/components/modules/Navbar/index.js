@@ -81,9 +81,9 @@ export default function Navbar() {
               <div className="flex items-center">
                 <Link
                   to="/become-partner"
-                  className="flex px-5 items-center py-6 text-sm leading-5 hover:text-gray-200  focus:outline-none transition duration-150 ease-in-out"
+                  className="flex px-5 items-center py-6 text-sm leading-5 focus:outline-none link-scale"
                 >
-                  Tawarkan jasa kamu
+                  Tawarkan layanan
                 </Link>
                 {userName  ? (
                   <MyAccount profile={profile} setProfile={setProfile} />

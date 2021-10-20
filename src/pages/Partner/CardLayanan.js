@@ -9,7 +9,7 @@ export default function CardTujuan({ item, currentClick, handleClick }) {
           currentClick === item.id
             ? "border-2 border-gray-600 "
             : "border border-gray-300 "
-        }bg-white relative rounded-md shadow-lg hover:shadow-xl duration-500`}
+        }bg-white cursor-pointer relative rounded-md shadow-md hover:shadow-xl duration-200`}
       >
         <div className="flex justify-between items-center mx-3 py-6">
           <h2>{item.name}</h2>

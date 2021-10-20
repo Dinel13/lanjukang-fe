@@ -25,7 +25,6 @@ export default function BecomePartner() {
       {id:2, name :"Paket Wisata"},
       {id:3, name :"Akomodasi"},
       {id:4, name :"Tour Guide"},
-      {id:5, name :"Lainya"},
    ]
 
 

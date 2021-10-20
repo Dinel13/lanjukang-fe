@@ -177,10 +177,10 @@ export default function CreateLayanan({ token, type }) {
                 ></textarea>
               </div>
               <p className="text-xs text-red-500 text-right my-3">
-                Required fields are marked with an asterisk{" "}
-                <abbr title="Required field">*</abbr>
+                <span className="required text-base mr-1"></span>
+                Wajib disisi
               </p>
-              <div className="mt-5 text-right space-x-3 block">
+              <div className="mt-4 text-right space-x-3 block">
                 {pending ? (
                   <PendingButton />
                 ) : (

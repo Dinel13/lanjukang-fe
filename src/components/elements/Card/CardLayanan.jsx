@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function CardTujuan({ name }) {
    return (
       <div className="p-3 w-full 2xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
-         <div className="bg-white relative border border-gray-300 rounded-md shadow-lg transform duration-500 hover:shadow-xl hover:scale-105">
+         <div className="bg-white cursor-pointer relative border border-gray-300 rounded-md shadow-lg transform duration-500 hover:shadow-xl hover:scale-105">
             <Link to={name} className="flex justify-between items-center mx-3 py-6">
                <h2>{name}</h2>
                <div className="flex text-yellow-600">

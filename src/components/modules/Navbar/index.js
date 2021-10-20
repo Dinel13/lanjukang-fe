@@ -37,7 +37,7 @@ export default function Navbar() {
               // : "bg-gray-50 text-gray-800 shadow-md bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
           }`}
         >
-          <div className="mx-auto px-6 py-2 xl:py-0">
+          <div className="mx-auto px-6 py-0 xl:py-0">
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
               <div className="flex py-4 w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">

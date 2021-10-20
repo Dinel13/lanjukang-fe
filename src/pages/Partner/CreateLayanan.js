@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 
 import PendingButton from "../../components/elements/button/Pending";
 import { showNotif } from "../../store/notifSlice";
+import Kabupaten from "./kabupaten";
 
 export default function CreateLayanan({ token, type }) {
   const formRef = useRef();
@@ -28,7 +29,7 @@ export default function CreateLayanan({ token, type }) {
     formData.append("name", nameRef.current.value);
     formData.append("price", priceRef.current.value);
     formData.append("description", descRef.current.value);
-    formData.append("location_id", locationRef.current.value);
+    formData.append("location", locationRef.current.value);
     formData.append("type_id", type);
     formData.append("image", imageRef.current.files[0]);
     formData.append("capacity", capacityRef.current.value);
@@ -83,37 +84,37 @@ export default function CreateLayanan({ token, type }) {
       <div className="max-w-2xl w-full space-y-14 p-10 bg-gray-50 border-2 border-gray-200 rounded-xl shadow-xl z-10">
         <div className="grid  gap-8 grid-cols-1">
           <div className="flex flex-col ">
-            <h2 className="font-semibold md:text-xl lg:text-2xl ">
+            <h2 className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl ">
               Detail Layanan Kamu
             </h2>
-            <form onSubmit={submitHandler} className="mt-5">
-              <div className="md:flex flex-row md:space-x-4 w-full text-xs">
-                <div className="mb-3 space-y-2 w-full text-xs">
+            <form onSubmit={submitHandler} className="mt-5 text-sm">
+              <div className="md:flex flex-row md:space-x-4 w-full ">
+                <div className="mb-3 space-y-2 w-full">
                   <label className="font-semibold text-gray-600 py-2">
                     Nama Layanan <small className="required"></small>
                   </label>
                   <input
                     placeholder="Nama Layanan"
-                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                    className="block input-field"
                     required="required"
                     type="text"
                     ref={nameRef}
                   />
                 </div>
-                <div className="mb-3 space-y-2 w-full text-xs">
+                <div className="mb-3 space-y-2 w-full">
                   <label className="font-semibold text-gray-600 py-2">
                     Kapasitas Layanan <small className="required"></small>
                   </label>
                   <input
                     placeholder="Kapasitas Layanan"
-                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                    className="block input-field"
                     required="required"
                     type="number"
                     ref={capacityRef}
                   />
                 </div>
               </div>
-              <div className="md:flex md:flex-row md:space-x-4 w-full text-xs">
+              <div className="md:flex md:flex-row md:space-x-4 w-full">
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
                     Harga Layanan (Rp/satu layanan){" "}
@@ -121,7 +122,7 @@ export default function CreateLayanan({ token, type }) {
                   </label>
                   <input
                     placeholder="Harga Layanan"
-                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                    className="block input-field"
                     required="required"
                     type="number"
                     ref={priceRef}
@@ -131,43 +132,38 @@ export default function CreateLayanan({ token, type }) {
                   <label className="font-semibold text-gray-600 py-2">
                     Location<small className="required"></small>
                   </label>
-                  <select
-                    className="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full "
+                  <input
+                    list="location"
+                    name="mylocation"
                     required="required"
+                    className="block input-field"
                     ref={locationRef}
-                  >
-                    <option value="">Seleted location</option>
-                    <option value="1">Cochin,KL</option>
-                    <option value="2">Mumbai,MH</option>
-                    <option value="3">Bangalore,KA</option>
-                  </select>
-                  <p className="text-sm text-red-500 hidden mt-3" id="error">
-                    Please fill out this field.
-                  </p>
+                    placeholder="cari lokasi"
+                  />
+                  <datalist id="location">
+                    {Kabupaten.map((item, index) => (
+                      <option key={index} value={item} />
+                    ))}
+                  </datalist>
                 </div>
               </div>
-              <div className="md:flex md:flex-row md:space-x-4 w-full text-xs">
+              <div className="md:flex md:flex-row md:space-x-4 w-full">
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
                     Foto Layanan <small className="required"></small>
                   </label>
-                  <label className="inline-flex items-center appearance-none w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4">
-                    <input
-                      // ref={imageRef}
-                      type="file"
-                      accept="image/*"
-                      alt="your image"
-                      ref={imageRef}
-                      required
-                      // hidden untuk menghilangkan nama file yang diupload
-                    />
-                  </label>
-                  <p className="text-red text-xs hidden">
-                    Please fill out this field.
-                  </p>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    alt="your image"
+                    ref={imageRef}
+                    className="block input-field"
+                    required
+                    // hidden untuk menghilangkan nama file yang diupload
+                  />
                 </div>
               </div>
-              <div className="flex-auto w-full mb-1 text-xs space-y-2 mt-2">
+              <div className="flex-auto w-full mb-1 space-y-2 mt-2">
                 <label className="font-semibold text-gray-600 py-2">
                   Deskripsi Layanan <small className="required"></small>
                 </label>
@@ -175,7 +171,7 @@ export default function CreateLayanan({ token, type }) {
                   required=""
                   name="message"
                   ref={descRef}
-                  className="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"
+                  className="w-full min-h-[100px] max-h-[300px] h-28 block input-field"
                   placeholder="Enter your comapny info"
                   spellCheck="false"
                 ></textarea>

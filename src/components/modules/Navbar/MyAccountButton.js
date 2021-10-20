@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 
 export default function MyAccountButton({ profile, setProfile }) {
+  // const modalRef = useRef();
+
+  // useEffect(() => {
+  //   profile &&
+  //     (window.onclick = function (event) {
+  //       if (event.target === modalRef) {
+  //       } else {
+  //         setProfile(false);
+  //       }
+  //     });
+  // }, [modalRef, setProfile, profile]);
+
   return (
     <div className="ml-6 relative">
       <div
@@ -8,7 +20,7 @@ export default function MyAccountButton({ profile, setProfile }) {
         onClick={() => setProfile(!profile)}
       >
         {profile && (
-          <ul className="p-2 w-48 bg-gray-50 absolute rounded-lg right-0 shadow-lg top-0 mt-14 ">
+          <ul className="p-2 w-48 bg-gray-50 absolute rounded-lg right-0 shadow-lg top-0 mt-14">
             <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
               <Link to="/akunku" className="flex items-center">
                 <svg
@@ -54,7 +66,7 @@ export default function MyAccountButton({ profile, setProfile }) {
             </li>
           </ul>
         )}
-        <div className="py-1 cursor-pointer flex items-center text-sm border-2 border-transparent rounded-3xl bg-white focus:outline-none focus:border-white transition duration-150 ease-in-out">
+        <div className="py-1.5 px-1 cursor-pointer flex items-center text-sm rounded-full bg-white transform hover:shadow-xl hover:scale-105 transition duration-150 ease-in-out">
           <div className="mx-2 text-gray-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"

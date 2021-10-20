@@ -82,26 +82,28 @@ export default function BecomeAdmin({ token }) {
   return (
     <>
       <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-screen overflow-hidden bg-transparent py-32 opacity-100 z-20">
-        <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg ">
+        <div className="max-w-lg mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg ">
           <div className="md:flex">
             <div className="w-full">
               <div className="p-4 border-b-2">
-                <span className="px-3 text-lg font-bold text-gray-600">
+                <span className="px-2 text-lg sm:text-xl tracking-wide font-bold text-gray-800">
                   Jadi admin
                 </span>
               </div>
-              <form onSubmit={handleSubmit} className="p-4 mt-2">
+              <form onSubmit={handleSubmit} className="py-4 px-6">
+              <p className="text-sm text-gray-700 mb-3">Untuk dapat menawarkan layanan, kamu harus lengkapi beberapa data dibawah</p>
                 <div className="mb-3 space-y-2 w-full text-xs">
-                  <label className="font-semibold text-gray-600 py-2">
-                    Nama Layanan <small className="required"></small>
+                  <label className="font-semibold text-gray-600">
+                    Nomor Rekening <small className="required"></small>
                   </label>
                   <input
-                    placeholder="Nama Layanan"
+                    placeholder="Nomor Rekening"
                     className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                     required="required"
                     type="text"
                     ref={nameRef}
                   />
+                  <small className="">nomor rekening akan digunakan unutuk transaksi pembelian layanan</small>
                 </div>
                 <div>
                   <label className="inline-flex items-center">

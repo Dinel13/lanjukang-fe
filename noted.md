@@ -19,3 +19,7 @@ TAPI TIDAK AHARUS KAREN KITA MAU MEMUDAHLKAN
 
 ubah skema user jika jadi admin
 haruskan buat nama toko yang baru
+
+
+verifikasi akun admin https://seller.tokopedia.com/edu/verifikasi-toko/
+tmabah layanan https://seller.tokopedia.com/add-product

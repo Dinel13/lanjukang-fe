@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../../components/elements/Card/CardService";
 import Loading from "../../components/layout/loading";
 
-export default function PopularDestView() {
+export default function PopularService() {
   const [pending, setPending] = useState(true);
   const [error, setError] = useState(false);
   const [popularService, setPopularService] = useState([]);
@@ -38,7 +38,7 @@ export default function PopularDestView() {
   return (
     <div className="container px-8 py-10 sm:pt-14 lg:pt-16  mx-auto">
       <h2 className="sm:text-3xl lg:text-4xl text-2xl font-bold  text-gray-900">
-        Tujuan Terpopular
+        Layanan Terpopular
       </h2>
       <div className="flex flex-wrap -mx-4 my-8">
         {pending && <Loading />}

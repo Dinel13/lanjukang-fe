@@ -19,6 +19,7 @@ const BecomePartner = lazy(() => import("./pages/Partner/BecomePartner"));
 const MyDetailService = lazy(() => import("./pages/Partner/MyDetailService"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
+const AllServices = lazy(() => import("./pages/Service/AllServices"));
 const ForgotPassword = React.lazy(() => import("./pages/MyAccount/ForgotPassword"));
 const ResetPassword = React.lazy(() => import("./pages/MyAccount/ResetPassword"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -55,6 +56,9 @@ function App() {
         </Route>
         <Route path="/become-partner" exact>
           <BecomePartner />
+        </Route>
+        <Route path="/layanan" exact>
+          <AllServices />
         </Route>
         <Route path="/akunku/update" exact>
           <UpdateAccount />

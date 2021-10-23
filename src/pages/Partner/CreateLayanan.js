@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 
 import PendingButton from "../../components/elements/button/Pending";
+import useRedirect from "../../hooks/redirect";
 import { showNotif } from "../../store/notifSlice";
 import Kabupaten from "./kabupaten";
 
@@ -17,6 +18,7 @@ export default function CreateLayanan({ token, type }) {
   const [pending, setPending] = React.useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+  const redirect = useRedirect()
 
   useEffect(() => {
     formRef.current.scrollIntoView({ behavior: "smooth" });
@@ -67,6 +69,7 @@ export default function CreateLayanan({ token, type }) {
         1000
       );
     } catch (error) {
+      redirect(error.message, "Buat Layanan")
       dispatch(
         showNotif({
           status: "Error",

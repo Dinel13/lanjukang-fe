@@ -30,7 +30,7 @@ export default function NavLinks() {
         Kapal
       </Link>
       <Link
-        to="/penunjuk"
+        to="/layanan"
         className="flex p-3 items-center text-sm leading-5 focus:outline-none link-scale"
       >
         <span className="mr-2">

@@ -7,29 +7,30 @@ import { showNotif } from "../../store/notifSlice";
 
 export default function BecomeAdmin({ token }) {
   const nameRef = useRef(null);
-  const commitRef = useRef(null);
+  const rekeningRef = useRef(null);
+  const bankRef = useRef(null);
   const [pending, setPending] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
 
-
   // check if user have token
   if (!token) {
     // push to login page with state to redirect to become admin
-    setTimeout(() => history.push({
-      pathname: "/masuk",
-      state: {
-        from : "/become-admin",
-      },
-    }), 500);
+    setTimeout(
+      () =>
+        history.push({
+          pathname: "/masuk",
+          state: {
+            from: "/become-admin",
+          },
+        }),
+      500
+    );
   }
 
   const cancel = () => {
     history.goBack();
   };
-
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,12 +44,16 @@ export default function BecomeAdmin({ token }) {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          body: null,
+          body: JSON.stringify({
+            name: nameRef.current.value,
+            rekening: rekeningRef.current.value,
+            bank: bankRef.current.value,
+          }),
         }
       );
       const data = await result.json();
       if (!result.ok) {
-        throw new Error(data.message || "gagal mengjadi admin");
+        throw new Error(data.error.message || "gagal mengjadi admin");
       }
 
       dispatch(
@@ -81,36 +86,71 @@ export default function BecomeAdmin({ token }) {
 
   return (
     <>
-      <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-screen overflow-hidden bg-transparent py-32 opacity-100 z-20">
-        <div className="max-w-lg mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg ">
-          <div className="md:flex">
+      <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen overflow-hidden bg-transparent py-20 opacity-100 z-30">
+        <div className="max-w-xl mx-auto bg-white rounded-lg overflow-hidden">
             <div className="w-full">
               <div className="p-4 border-b-2">
-                <span className="px-2 text-lg sm:text-xl tracking-wide font-bold text-gray-800">
+                <span className="px-2 text-lg sm:text-xl md:text-2xl lg:text-4xl tracking-wide font-bold text-gray-800">
                   Jadi admin
                 </span>
               </div>
               <form onSubmit={handleSubmit} className="py-4 px-6">
-              <p className="text-sm text-gray-700 mb-3">Untuk dapat menawarkan layanan, kamu harus lengkapi beberapa data dibawah</p>
-                <div className="mb-3 space-y-2 w-full text-xs">
+                <p className="text-sm text-gray-700 mb-3">
+                  Kamu harus lengkapi beberapa data dibawah untuk dapat menawarkan layanan.
+                </p>
+                <div className="mb-3 space-y-2 w-full text-sm">
+                    <label className="font-semibold text-gray-600">
+                      Nama penyedia layanan <small className="required"></small>
+                    </label>
+                  <input
+                    placeholder="Nama"
+                    className="block input-field"
+                    required="required"
+                    type="text"
+                    ref={nameRef}
+                  />
+                  <small className="text-gray-600">
+                    Berikan nama yang unik dan menarik karena nama ini akan
+                    tampil pada setiap layanan yang kamu tawarkan
+                  </small>
+                </div>
+                <div className="mb-3 space-y-2 w-full text-sm">
                   <label className="font-semibold text-gray-600">
                     Nomor Rekening <small className="required"></small>
                   </label>
                   <input
                     placeholder="Nomor Rekening"
-                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                    className="block input-field"
+                    required="required"
+                      ref={rekeningRef}
+                      type="text"
+                  />
+                  <small className="text-gray-600">
+                    Nomor rekening akan digunakan unutuk transaksi setiap pembelian
+                    layanan
+                  </small>
+                </div>
+                <div className="mb-3 space-y-2 w-full text-sm">
+                  <label className="font-semibold text-gray-600">
+                    Bank <small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="Nomor Rekening"
+                    className="block input-field"
                     required="required"
                     type="text"
-                    ref={nameRef}
+                    ref={bankRef}
                   />
-                  <small className="">nomor rekening akan digunakan unutuk transaksi pembelian layanan</small>
+                  <small className="text-gray-600">
+                    Nomor rekening akan digunakan unutuk transaksi setiap pembelian
+                    layanan
+                  </small>
                 </div>
                 <div>
                   <label className="inline-flex items-center">
                     <input
                       type="checkbox"
                       className="form-checkbox"
-                      ref={commitRef}
                       required
                     />
                     <small className="text-gray-600 ml-2">
@@ -141,10 +181,9 @@ export default function BecomeAdmin({ token }) {
                 </div>
               </form>
             </div>
-          </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-screen z-10 overflow-hidden bg-gray-800 opacity-50"></div>
+      <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-20 overflow-hidden bg-gray-800 opacity-50"></div>
     </>
   );
 }

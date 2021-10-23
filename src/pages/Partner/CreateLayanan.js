@@ -15,6 +15,12 @@ export default function CreateLayanan({ token, type }) {
   const locationRef = useRef();
   const imageRef = useRef();
   const capacityRef = useRef();
+  const awalRef = useRef();
+  const akhirRef = useRef();
+  const jamRef = useRef();
+  const tanggalRef = useRef();
+  const jarakRef = useRef();
+  const lamaRef = useRef();
   const [pending, setPending] = React.useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -35,6 +41,12 @@ export default function CreateLayanan({ token, type }) {
     formData.append("type_id", type);
     formData.append("image", imageRef.current.files[0]);
     formData.append("capacity", capacityRef.current.value);
+    formData.append("start", awalRef.current.value);
+    formData.append("destiny", akhirRef.current.value);
+    formData.append("time", jamRef.current.value);
+    formData.append("date", tanggalRef.current.value);
+    formData.append("distance", jarakRef.current.value);
+    formData.append("duration", lamaRef.current.value);
     console.log(formData);
 
     try {
@@ -117,6 +129,57 @@ export default function CreateLayanan({ token, type }) {
                   />
                 </div>
               </div>
+              <div className="md:flex flex-row md:space-x-4 w-full ">
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                    Titik Awal Keberangkatan<small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="Pelabuhan potere"
+                    className="block input-field"
+                    required="required"
+                    type="text"
+                    ref={awalRef}
+                  />
+                </div>
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                    Titik Tujuan<small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="Pulau Lanjukang"
+                    className="block input-field"
+                    required="required"
+                    type="text"
+                    ref={akhirRef}
+                  />
+                </div>
+              </div>
+              <div className="md:flex flex-row md:space-x-4 w-full ">
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                    Jam Keberangkatan<small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="Nama Layanan"
+                    className="block input-field"
+                    required="required"
+                    type="time"
+                    ref={jamRef}
+                  />
+                </div>
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                    Tanggal Keberangkatan <small className="required"></small>
+                  </label>
+                  <input
+                    className="block input-field"
+                    required="required"
+                    type="date"
+                    ref={tanggalRef}
+                  />
+                </div>
+              </div>
               <div className="md:flex md:flex-row md:space-x-4 w-full">
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
@@ -133,7 +196,7 @@ export default function CreateLayanan({ token, type }) {
                 </div>
                 <div className="w-full flex flex-col mb-3">
                   <label className="font-semibold text-gray-600 py-2">
-                    Location<small className="required"></small>
+                    Lokasi Layanan<small className="required"></small>
                   </label>
                   <input
                     list="location"
@@ -148,6 +211,32 @@ export default function CreateLayanan({ token, type }) {
                       <option key={index} value={item} />
                     ))}
                   </datalist>
+                </div>
+              </div>
+              <div className="md:flex flex-row md:space-x-4 w-full ">
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                    Estimasi Waktu Perjalanan<small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="1 Jam 20 Menit"
+                    className="block input-field"
+                    required="required"
+                    type="text"
+                    ref={lamaRef}
+                  />
+                </div>
+                <div className="mb-3 space-y-2 w-full">
+                  <label className="font-semibold text-gray-600 py-2">
+                  Estimasi Jarak Perjalanan(KM)<small className="required"></small>
+                  </label>
+                  <input
+                    placeholder="8"
+                    className="block input-field"
+                    required="required"
+                    type="number"
+                    ref={jarakRef}
+                  />
                 </div>
               </div>
               <div className="md:flex md:flex-row md:space-x-4 w-full">

@@ -56,7 +56,7 @@ export default function CardService({ data }) {
           </div>
           <div className="flex justify-end items-center space-x-2 my-1">
             <Link
-              to={`service/detail/${data.id}`}
+              to={`layanan/detail/${data.id}`}
               className="py-1.5 text-sm px-4 btn-las"
             >
               Detail

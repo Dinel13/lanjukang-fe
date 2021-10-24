@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="mx-auto px-6 py-0 xl:py-0">
             <div className="flex items-center justify-between">
               {/* for branc nav*/}
-              <div className="flex py-4 w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+              <div className="flex py-3 w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                 <Link to="/" className="flex items-center">
                   <img src={logo} alt="logo" className="h-10 mr-1" />
                   <p className="text-lg tracking-widest font-bold">Lanjukang</p>

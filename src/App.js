@@ -30,6 +30,7 @@ const ResetPassword = React.lazy(() =>
 const Terms = lazy(() => import("./pages/Terms"));
 const Prifacy = lazy(() => import("./pages/Prifacy"));
 const Bantuan = lazy(() => import("./pages/Bantuan"));
+const Pencarian = lazy(() => import("./pages/Pencarian"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
@@ -77,6 +78,9 @@ function App() {
         <Route path="/prifacy" exact>
           <Prifacy />
         </Route>
+        <Route path="/pencarian" exact>
+          <Pencarian />
+        </Route>
         <Route path="/layanan/detail/:id" exact>
           <DetailService />
         </Route>
@@ -123,6 +127,9 @@ function App() {
         </Route>
         <Route path="/become-partner" exact>
           <BecomePartner />
+        </Route>
+        <Route path="/pencarian" exact>
+          <Pencarian />
         </Route>
         <Route path="/perjalanan" exact></Route>
         <Route path="/reset-password/:token" exact>

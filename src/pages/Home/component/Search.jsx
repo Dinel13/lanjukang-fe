@@ -1,38 +1,47 @@
-import { useState } from "react";
-import { listAllDestiny } from "../../../actions/destiny";
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
+import { showNotif } from "../../../store/notifSlice";
 
 const Search = () => {
-   const [values, setValues] = useState({
-      search: undefined,
-      results: [],
-      searched: false,
-      message: "",
-   });
+   const history = useHistory();
+   const searchRef = useRef();
+   const dispatch = useDispatch();
 
-   // const { search, results, searched, message } = values;
-   const { search } = values;
-
-   const searchSubmit = (e) => {
+   const searchSubmit = async (e) => {
+      // console.log("dsadsa");
       e.preventDefault();
-      listAllDestiny({ search }).then((data) => {
-         setValues({
-            ...values,
-            results: data,
-            searched: true,
-            message: `${data.length} blogs found`,
+      const search = searchRef.current.value;
+      console.log(search);
+      try {
+         const result = await fetch(
+            `${process.env.REACT_APP_SERVER_URL}/service/search?q=${search}`,
+            // `http://localhost:8080//service/search?q=${search}`,
+            {
+               method: "GET",
+            }
+         );
+         const data = await result.json();
+         if (!result.ok) {
+            throw new Error(data.message || "gagal mendapat layanan");
+         }
+         console.log(data);
+         searchRef.current.value = "";
+         history.push({
+            pathname: "/pencarian",
+            state: { data : data.services, search },
          });
-      });
+      } catch (error) {
+         dispatch(
+            showNotif({
+               status: "Error",
+               message: error.message,
+               action: null,
+            })
+         );
+      }
    };
 
-   const handleChange = (e) => {
-      // console.log(e.target.value);
-      setValues({
-         ...values,
-         search: e.target.value,
-         searched: false,
-         results: [],
-      });
-   }
    return (
       <div className="inline-flex py-1.5 px-3 items-center bg-white rounded-full text-gray-800">
          <form className="flex w-full" onSubmit={searchSubmit}>
@@ -41,7 +50,8 @@ const Search = () => {
                   type="search"
                   className="py-2 px-4 plac outline-none"
                   placeholder="Mau kemana?"
-                  onChange={handleChange}
+                  required
+                  ref={searchRef}
                />
 
                <button className="btn-sec ml-2 p-3 rounded-full" type="submit">

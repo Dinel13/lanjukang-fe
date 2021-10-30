@@ -21,8 +21,15 @@ const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const DetailTrip = lazy(() => import("./pages/TirpDetail/DetailTrip"));
 const AllServices = lazy(() => import("./pages/Service/AllServices"));
 const DetailService = lazy(() => import("./pages/Service/DetailService"));
-const ForgotPassword = React.lazy(() => import("./pages/MyAccount/ForgotPassword"));
-const ResetPassword = React.lazy(() => import("./pages/MyAccount/ResetPassword"));
+const ForgotPassword = React.lazy(() =>
+  import("./pages/MyAccount/ForgotPassword")
+);
+const ResetPassword = React.lazy(() =>
+  import("./pages/MyAccount/ResetPassword")
+);
+const Terms = lazy(() => import("./pages/Terms"));
+const Prifacy = lazy(() => import("./pages/Prifacy"));
+const Bantuan = lazy(() => import("./pages/Bantuan"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
@@ -61,15 +68,24 @@ function App() {
         <Route path="/layanan" exact>
           <AllServices />
         </Route>
+        <Route path="/bantuan" exact>
+          <Bantuan />
+        </Route>
+        <Route path="/terms" exact>
+          <Terms />
+        </Route>
+        <Route path="/prifacy" exact>
+          <Prifacy />
+        </Route>
         <Route path="/layanan/detail/:id" exact>
           <DetailService />
         </Route>
         <Route path="/akunku/update" exact>
           <UpdateAccount />
-        </Route> 
+        </Route>
         <Route path="/user/layanan/:id" exact>
           <MyDetailService />
-        </Route> 
+        </Route>
         <Route path="*">
           <NotFound />
         </Route>
@@ -92,6 +108,15 @@ function App() {
         </Route>
         <Route path="/search" exact>
           <SearchPage />
+        </Route>
+        <Route path="/bantuan" exact>
+          <Bantuan />
+        </Route>
+        <Route path="/terms" exact>
+          <Terms />
+        </Route>
+        <Route path="/prifacy" exact>
+          <Prifacy />
         </Route>
         <Route path="/detail-trip" exact>
           <DetailTrip />

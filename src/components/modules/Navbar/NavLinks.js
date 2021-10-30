@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NavLinks() {
   return (
     <div className="flex justify-center ml-2">
-      <Link
+      {/* <Link
         to="/perjalanan"
         className="flex items-center p-3 text-sm leading-5 focus:outline-none link-scale"
       >
@@ -28,7 +28,7 @@ export default function NavLinks() {
           </svg>
         </span>
         Kapal
-      </Link>
+      </Link> */}
       <Link
         to="/layanan"
         className="flex p-3 items-center text-sm leading-5 focus:outline-none link-scale"
@@ -51,6 +51,32 @@ export default function NavLinks() {
           </svg>
         </span>
         Semua Layanan
+      </Link>
+      <Link
+        to="/become-partner"
+        className="flex items-center p-3 text-sm leading-5 focus:outline-none link-scale"
+      >
+        <span className="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon icon-tabler icon-tabler-grid"
+            width={20}
+            height={20}
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <rect x={4} y={4} width={6} height={6} rx={1} />
+            <rect x={14} y={4} width={6} height={6} rx={1} />
+            <rect x={4} y={14} width={6} height={6} rx={1} />
+            <rect x={14} y={14} width={6} height={6} rx={1} />
+          </svg>
+        </span>
+        Tawarkan layanan
       </Link>
     </div>
   );

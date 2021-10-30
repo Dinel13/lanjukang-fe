@@ -79,12 +79,12 @@ export default function Navbar() {
                 </div> */}
               </div>
               <div className="flex items-center">
-                <Link
+                {/* <Link
                   to="/become-partner"
                   className="flex p-3 items-center text-sm leading-5 focus:outline-none link-scale"
                 >
                   Tawarkan layanan
-                </Link>
+                </Link> */}
                 {userName  ? (
                   <MyAccount profile={profile} setProfile={setProfile} />
                 ) : (

@@ -57,7 +57,7 @@ export default function SideNav({ show, setShow, name }) {
             <ul className="">
               <li className="text-gray-800 pt-10 hover:text-indigo-700">
                 <Link
-                  to="/perjalana"
+                  to="/layanan"
                   onClick={() => setShow(!show)}
                   className="cursor-pointer"
                 >
@@ -80,14 +80,14 @@ export default function SideNav({ show, setShow, name }) {
                         <rect x={14} y={14} width={6} height={6} rx={1} />
                       </svg>
                     </div>
-                    <p className=" xl:text-base text-base ml-3">Perjalanan</p>
+                    <p className=" xl:text-base text-base ml-3">Semua layanan</p>
                   </div>
                 </Link>
               </li>
 
               <li className="text-gray-800 pt-8 hover:text-indigo-700">
                 <Link
-                  to="/penunjuk"
+                  to="/become-partner"
                   onClick={() => setShow(!show)}
                   className="cursor-pointer"
                 >
@@ -108,7 +108,7 @@ export default function SideNav({ show, setShow, name }) {
                           <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
                         </svg>
                       </div>
-                      <p className=" xl:text-base text-base ml-3">guided</p>
+                      <p className=" xl:text-base text-base ml-3">Tawarkan jasa</p>
                     </div>
                   </div>
                 </Link>
@@ -137,7 +137,7 @@ export default function SideNav({ show, setShow, name }) {
                           <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                         </svg>
                       </div>
-                      <p className="xl:text-base text-base ml-3">akun ku</p>
+                      <p className="xl:text-base text-base ml-3">Akun ku</p>
                     </div>
                   </div>
                 </Link>
@@ -167,14 +167,14 @@ export default function SideNav({ show, setShow, name }) {
                           <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
                         </svg>
                       </div>
-                      <p className="xl:text-base text-base ml-3">bantuan</p>
+                      <p className="xl:text-base text-base ml-3">Bantuan</p>
                     </div>
                   </div>
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="w-full pb-4">
+          <div className="w-full pb-8">
             <hr className="-mx-4 border-gray-300 border mb-2" />
             {name ? (
               <div className="w-full flex items-center justify-between">

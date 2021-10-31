@@ -48,7 +48,7 @@ export default function Login() {
               ref={email}
               type="email"
               id="email"
-              placeholder="namaku@student.unhas.ac.id"
+              placeholder="namaku@gmail.com"
               required
               className="block mt-2 input-field"
             />

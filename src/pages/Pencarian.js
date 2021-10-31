@@ -27,7 +27,7 @@ export default function Pencarian() {
           Kata kunci{" "}
           <span className="text-gray-900 bg-red-200 p-1 rounded">{search}</span>
         </h3>
-        <Link to="/bacaan" className="block mb-10 text-blue-600">
+        <Link to="/layanan" className="block mb-10 text-blue-600">
           Lihat semua layanan
         </Link>
         <div className="flex flex-wrap -m-4">

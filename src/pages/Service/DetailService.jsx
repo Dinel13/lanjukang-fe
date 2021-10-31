@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { hideNotif, showNotif } from "../../store/notifSlice";
 
 export default function MyDetailService() {
   const [data, setData] = useState(null);
   const [pending, setPending] = useState(true);
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   useEffect(() => {
@@ -35,6 +38,18 @@ export default function MyDetailService() {
     }
   }, [id]);
 
+  const bookingHandler = async (e) => {
+    e.preventDefault()
+    console.log("fsdf");
+    dispatch(
+      showNotif({
+        status: "Error",
+        message: "belum jadi ini bos",
+        action: null,
+      })
+    );
+  }
+
   return (
     <section className="text-gray-700 body-font overflow-hidden bg-white">
       {pending && <div className="loading-container">
@@ -52,7 +67,7 @@ export default function MyDetailService() {
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-600 tracking-widest">
-                {data.type} by <Link to={data.owner_id} className="font-bold">{data.owner}</Link>
+                {data.type} by <Link to={`/user/${data.owner_id}`} className="font-bold">{data.owner}</Link>
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-bold mb-1">
                 {data.name}
@@ -81,9 +96,9 @@ export default function MyDetailService() {
                   <svg
                     fill="currentColor"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-4 h-4 text-red-500"
                     viewBox="0 0 24 24"
                   >
@@ -113,25 +128,22 @@ export default function MyDetailService() {
                   <span className="mr-3">Kapasitas</span>
                   {data.capacity}
                 </div>
-                <div className="flex">
-                  <span className="mr-3">Harga</span>
-                  {data.capacity}
-                </div>
               </div>
-              <div className="flex">
-                <span className="title-font font-medium text-2xl text-gray-900">
+              <div className="flex items-center">
+                <span className="title-font font-medium text-xl text-gray-900">
                   Rp
                   <span className="font-semibold"> {data.price}</span>
                 </span>
-                <button className="flex ml-auto py-2 px-6 btn-pri">
+                {/* <button className="ml-auto py-2 px-6 btn-pri" onClick={(e) =>  bookingHandler(e)}> */}
+                <button className="ml-auto py-2 px-6 btn-pri" onClick={() =>alert("Belum jadi ini bos")}>
                   Booking
                 </button>
                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                   <svg
                     fill="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
                   >

@@ -31,6 +31,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Prifacy = lazy(() => import("./pages/Prifacy"));
 const Bantuan = lazy(() => import("./pages/Bantuan"));
 const Pencarian = lazy(() => import("./pages/Pencarian"));
+const TypeLayanan = lazy(() => import("./pages/TypeLayanan"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
         </Route>
         <Route path="/pencarian" exact>
           <Pencarian />
+        </Route>
+        <Route path="/layanan/tipe/:id" exact>
+          <TypeLayanan />
         </Route>
         <Route path="/layanan/detail/:id" exact>
           <DetailService />
@@ -132,6 +136,9 @@ function App() {
           <Pencarian />
         </Route>
         <Route path="/perjalanan" exact></Route>
+        <Route path="/layanan/tipe/:id" exact>
+          <TypeLayanan />
+        </Route>
         <Route path="/reset-password/:token" exact>
           <ResetPassword />
         </Route>

@@ -9,7 +9,12 @@ export default function Layanan() {
             Layanan Kami
          </h2>
          <div className="flex flex-wrap -mx-4 my-8">
-            {["Kapal", "Paket Wisata", "Hotel", "Tour", "Kereta"].map(item => <Card name={item} key={item} />)}
+            {[
+               { name: "Kapal", id: 1 },
+               { name: "Paket Wisata", id: 2 },
+               { name: "Akomodasi", id: 3 },
+               { name: "Tour Guide", id: 4 }
+            ].map(item => <Card item={item} key={item.id} />)}
          </div>
       </div>
    );
